@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: it.tylframework.data.mongo.SampleMongoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.541 sec - in it.tylframework.data.mongo.SampleMongoApplicationTests
