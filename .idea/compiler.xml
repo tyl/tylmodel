@@ -25,6 +25,9 @@
         <module name="MongoDbModel" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="MongoDbModel" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 
