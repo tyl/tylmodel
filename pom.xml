@@ -18,7 +18,7 @@
 		<url>http://www.spring.io</url>
 	</organization>
 	<properties>
-        <kotlin.version>0.8.679</kotlin.version>
+        <kotlin.version>0.8.11</kotlin.version>
         <main.basedir>${basedir}/../..</main.basedir>
 	</properties>
 	<dependencies>

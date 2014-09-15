@@ -18,6 +18,8 @@ package it.tylframework.data.mongo;
 
 import it.tylframework.data.mongo.basics.Country;
 import it.tylframework.data.mongo.basics.Language;
+import it.tylframework.data.mongo.basics.Numerator;
+import it.tylframework.data.mongo.common.LangKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -36,6 +38,8 @@ public class SampleMongoApplication implements CommandLineRunner {
     private CountryRepository countryRep;
     @Autowired
     private LanguageRepository languageRep;
+    @Autowired
+    private NumeratorRepository numeratorRep;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -48,6 +52,8 @@ public class SampleMongoApplication implements CommandLineRunner {
 		repository.save(new Customer("Alice", "Smith"));
 		repository.save(new Customer("Bob", "Smith"));
         countryRep.save(new Country("it", "Italia",123));
+
+        numeratorRep.save(new Numerator("meter");
         languageRep.save(new Language("it","italianflag","italian"));
 
         // fetch all customers
@@ -67,6 +73,22 @@ public class SampleMongoApplication implements CommandLineRunner {
         }
         System.out.println();
 
+        // fetch all languages
+        System.out.println("Languages found with findAll():");
+        System.out.println("-------------------------------");
+        for (Language language : languageRep.findAll()) {
+            System.out.println(language);
+        }
+        System.out.println();
+
+        // fetch all numerators
+        System.out.println("Numerators found with findAll():");
+        System.out.println("-------------------------------");
+        for (Numerator numerator : numeratorRep.findAll()) {
+            System.out.println(numerator);
+        }
+        System.out.println();
+
 		// fetch an individual customer
 		System.out.println("Customer found with findByFirstName('Alice'):");
 		System.out.println("--------------------------------");
@@ -77,6 +99,13 @@ public class SampleMongoApplication implements CommandLineRunner {
 		for (Customer customer : repository.findByLastName("Smith")) {
 			System.out.println(customer);
 		}
+
+        System.out.println("Country found with twoCharCode('it'):");
+        System.out.println("--------------------------------");
+        Country cn=countryRep.findByTwoCharCode("it");
+        System.out.println(cn);
+        System.out.println(cn.getCreated_by());
+        System.out.println(cn.getCreated_on());
 
 	}
 
