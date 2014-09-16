@@ -1,0 +1,1 @@
+TODO Creare un bean di configurazione di Spring a cui accedere per conoscere utente, current language, default language

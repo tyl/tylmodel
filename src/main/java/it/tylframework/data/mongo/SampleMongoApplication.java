@@ -20,12 +20,16 @@ import it.tylframework.data.mongo.basics.Country;
 import it.tylframework.data.mongo.basics.Language;
 import it.tylframework.data.mongo.basics.Numerator;
 import it.tylframework.data.mongo.common.LangKey;
+import it.tylframework.data.mongo.common.MlText;
+import it.tylframework.data.mongo.config.TylContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
+import static it.tylframework.data.mongo.common.LangKey.*;
 
 @Configuration
 @EnableAutoConfiguration
@@ -53,8 +57,18 @@ public class SampleMongoApplication implements CommandLineRunner {
 		repository.save(new Customer("Bob", "Smith"));
         countryRep.save(new Country("it", "Italia",123));
 
-        numeratorRep.save(new Numerator("meter");
+        MlText mlTextEng= new MlText("nomi in italiano");
+        mlTextEng.set(LangKey.en,"Name in english");
+        numeratorRep.save(new Numerator("meter", mlTextEng, new MlText("valueDescription")));
         languageRep.save(new Language("it","italianflag","italian"));
+
+        TylContext.instance$.setCurrentLang(LangKey.fr);
+
+        MlText mlTextFr= new MlText("nomi in francese");
+        mlTextFr.set(LangKey.en,"Name in english");
+        numeratorRep.save(new Numerator("meter", mlTextFr, new MlText("valueDescription")));
+        languageRep.save(new Language("it","italianflag","italian"));
+
 
         // fetch all customers
         System.out.println("Customers found with findAll():");
