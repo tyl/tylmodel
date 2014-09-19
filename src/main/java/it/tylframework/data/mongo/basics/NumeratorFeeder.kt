@@ -10,11 +10,11 @@ import it.tylframework.data.mongo.config.TylContext
 data class NumeratorFeeder(
         var freezed:Boolean,
         var startingDate:Date,
-        var startingNumber:Integer,
+        var startingNumber:Int,
         var endingDate:Date,
-        var warningNumber:Integer,
-        var incrementBy:Integer,
-        var lastNumberUsed:Integer,
+        var warningNumber:Int,
+        var incrementBy:Int,
+        var lastNumberUsed:Int,
         var outputAsString: Boolean,
         var ouputFormat:String)
 :Footprint(TylContext.currentUser, Date() ,TylContext.currentUser,  Date()){

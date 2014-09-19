@@ -8,4 +8,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface CountryRepository extends MongoRepository<Country,String> {
     public Country findByTwoCharCode(String two_char_code);
+    public Country findByNumericCode(Integer numeric_code);
 }

@@ -47,7 +47,7 @@ public class SampleMongoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
+         /*
 		repository.deleteAll();
         countryRep.deleteAll();
         languageRep.deleteAll();
@@ -120,7 +120,7 @@ public class SampleMongoApplication implements CommandLineRunner {
         System.out.println(cn);
         System.out.println(cn.getCreated_by());
         System.out.println(cn.getCreated_on());
-
+               */
 	}
 
 	public static void main(String[] args) throws Exception {
