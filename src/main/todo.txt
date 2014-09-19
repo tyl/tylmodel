@@ -1,1 +1,3 @@
 TODO Creare un bean di configurazione di Spring a cui accedere per conoscere utente, current language, default language
+TODO Sistemare la licence in testa ai programmi in linux
+TODO Modificare l'ambiente di test portando in test l'applicazione Spring
