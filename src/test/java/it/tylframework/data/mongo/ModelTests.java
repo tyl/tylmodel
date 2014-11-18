@@ -1,6 +1,9 @@
 package it.tylframework.data.mongo;
 
 import it.tylframework.data.mongo.basics.Country;
+import it.tylframework.data.mongo.basics.Dao.NumeratorDao;
+import it.tylframework.data.mongo.basics.NumeratorType;
+import it.tylframework.data.mongo.common.MlText;
 import it.tylframework.data.mongo.common.Signature;
 import it.tylframework.data.mongo.config.TylContext;
 import org.junit.Before;
@@ -43,6 +46,9 @@ public class ModelTests {
     @Autowired
     private CountryRepository countryRep;
 
+    @Autowired
+    private NumeratorDao numeratorDao;
+
     @Before
     public void init() {
         TylContext.instance$.setCurrentUser(new Signature("mp@marcopancotti.it"));
@@ -58,4 +64,9 @@ public class ModelTests {
         assertTrue("Country with numericCode=123 is not Italia: ", italia.getOfficialName().equals("Italia"));
     }
 
+    @Test
+    public void testNumeratorType() {
+        NumeratorType numeratorType = new NumeratorType(new MlText("Fatture"), new MlText("Numeratore Fatture"), true, true, true);
+        numeratorDao.createNumeratorType(numeratorType);
+    }
 }

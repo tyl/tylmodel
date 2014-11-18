@@ -9,6 +9,9 @@ import it.tylframework.data.mongo.config.TylContext
 /**
  * Created by marco on 25/08/14.
  */
+/*
+
+
 [TypeAlias("bas_Country")]
 data class Country(
         var twoCharCode: String,
@@ -16,3 +19,5 @@ data class Country(
         var numericCode:Int)
         :Footprint(TylContext.currentUser, Date() ,TylContext.currentUser,  Date()) {
 }
+
+*/
