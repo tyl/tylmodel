@@ -10,7 +10,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.data.domain.AuditorAware;
+import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.junit.Assert.assertTrue;
@@ -41,6 +45,7 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = MongoModelConfig.class)
+@EnableMongoAuditing(auditorAwareRef="tylAuditorAware")
 public class ModelTests {
 
     @Autowired
@@ -49,11 +54,16 @@ public class ModelTests {
     @Autowired
     private NumeratorDao numeratorDao;
 
+    @Bean
+    private AuditorAware<SecurityProperties.User> tylAuditorAware(){
+        return new TylAuditorAware();
+    }
+
     @Before
     public void init() {
-        TylContext.instance$.setCurrentUser(new Signature("mp@marcopancotti.it"));
+        TylContext.setCurrentUser(Signature.of("mp@marcopancotti.it"));
         countryRep.deleteAll();
-        countryRep.save(new Country("it", "Italia",123));
+        countryRep.save(new Country("it", "Italia", 123));
     }
 
     @Test

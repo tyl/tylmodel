@@ -13,4 +13,5 @@ import lombok.Data;
 public class Signature {
     private final String signature;
 
+    public static Signature EmptySignature=new Signature("noSignature");
 }

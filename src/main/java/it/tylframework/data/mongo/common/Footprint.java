@@ -1,8 +1,10 @@
 package it.tylframework.data.mongo.common;
 
+import it.tylframework.data.mongo.config.TylContext;
 import lombok.Data;
-import lombok.NonNull;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedBy;
 
 import java.util.Date;
 
@@ -14,11 +16,21 @@ import java.util.Date;
  */
 public @Data
 class Footprint {
-    @NonNull private Signature created_by;
-    @NonNull private Date created_on;
-    @NonNull private Signature upatedBy;
-    @NonNull private Date updated_on;
+    private Signature created_by;
+
+    @CreatedDate
+    private Date created_on;
+
+    private Signature upated_by;
+
+    @LastModifiedBy
+    private Date updated_on;
+
+    public Footprint(){
+        created_by = TylContext.currentUser();
+        upated_by = TylContext.currentUser();
+    }
 
     @Id
-    String id;
+    private String id;
 }
