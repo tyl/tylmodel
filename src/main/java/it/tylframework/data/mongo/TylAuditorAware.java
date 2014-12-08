@@ -1,5 +1,6 @@
 package it.tylframework.data.mongo;
 
+import it.tylframework.data.mongo.common.Signature;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
@@ -7,9 +8,8 @@ import org.springframework.stereotype.Component;
 /**
  * Created by mp on 21/11/14.
  */
-@Component
-public class TylAuditorAware implements AuditorAware<SecurityProperties.User> {
-    public SecurityProperties.User getCurrentAuditor(){
-        return new SecurityProperties.User();
+public class TylAuditorAware implements AuditorAware<Signature> {
+    public Signature getCurrentAuditor(){
+        return Signature.EmptySignature;
     }
 }

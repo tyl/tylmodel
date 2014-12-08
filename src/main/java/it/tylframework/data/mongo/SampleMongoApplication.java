@@ -118,8 +118,8 @@ public class SampleMongoApplication implements CommandLineRunner {
         System.out.println("--------------------------------");
         Country cn=countryRep.findByTwoCharCode("it");
         System.out.println(cn);
-        System.out.println(cn.getCreated_by());
-        System.out.println(cn.getCreated_on());
+        System.out.println(cn.getCreatedBy());
+        System.out.println(cn.getCreatedDate());
                */
 	}
 

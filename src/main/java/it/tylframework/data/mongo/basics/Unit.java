@@ -4,16 +4,22 @@ import it.tylframework.data.mongo.common.Footprint;
 import it.tylframework.data.mongo.common.MlText;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.TypeAlias;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Created by mp on 20/11/14.
  */
-@TypeAlias("bas_Unit")
+@Document(collection="bas_unit")
+@TypeAlias("bas_unit")
 @Data
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class Unit extends Footprint{
-    MlText name;
+    @NonNull String code;
+    @NonNull  MlText name;
     MlText description;
-    SystemOfUnits system_of_units;
+    @NonNull  @DBRef(lazy = true) SystemOfUnits system_of_units;
 }

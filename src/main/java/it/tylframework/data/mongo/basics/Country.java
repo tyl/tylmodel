@@ -18,11 +18,8 @@ import java.util.Date;
 @TypeAlias("Country")
 @Data
 @RequiredArgsConstructor
-public class Country{
+public class Country extends Footprint{
     @NonNull String twoCharCode;
     @NonNull String officialName;
     @NonNull Integer numericCode;
-
-    @CreatedDate
-    private Date createdDate;
 }

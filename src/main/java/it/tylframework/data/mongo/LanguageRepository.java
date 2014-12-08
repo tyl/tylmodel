@@ -7,4 +7,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * Created by marco on 25/08/14.
  */
 public interface LanguageRepository extends MongoRepository<Language, String> {
+    public Language findByCode(String code);
+    public Language findByName(String name);
 }

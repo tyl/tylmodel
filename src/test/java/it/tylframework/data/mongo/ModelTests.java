@@ -1,8 +1,8 @@
 package it.tylframework.data.mongo;
 
-import it.tylframework.data.mongo.basics.Country;
+import it.tylframework.data.mongo.basics.*;
 import it.tylframework.data.mongo.basics.Dao.NumeratorDao;
-import it.tylframework.data.mongo.basics.NumeratorType;
+import it.tylframework.data.mongo.common.LangKey;
 import it.tylframework.data.mongo.common.MlText;
 import it.tylframework.data.mongo.common.Signature;
 import it.tylframework.data.mongo.config.TylContext;
@@ -15,6 +15,7 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.junit.Assert.assertTrue;
@@ -45,33 +46,82 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = MongoModelConfig.class)
-@EnableMongoAuditing(auditorAwareRef="tylAuditorAware")
 public class ModelTests {
 
     @Autowired
     private CountryRepository countryRep;
 
     @Autowired
-    private NumeratorDao numeratorDao;
+    private LanguageRepository languageRep;
 
-    @Bean
-    private AuditorAware<SecurityProperties.User> tylAuditorAware(){
-        return new TylAuditorAware();
-    }
+    @Autowired
+    private SystemOfUnitsRepository sistemOfUnitsRep;
+
+    @Autowired
+    private UnitRepository unitRep;
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
+    @Autowired
+    private NumeratorDao numeratorDao;
 
     @Before
     public void init() {
-        TylContext.setCurrentUser(Signature.of("mp@marcopancotti.it"));
+        //TylContext.setCurrentUser(Signature.of("mp@marcopancotti.it"));
         countryRep.deleteAll();
-        countryRep.save(new Country("it", "Italia", 123));
+        languageRep.deleteAll();
+        sistemOfUnitsRep.deleteAll();
+        unitRep.deleteAll();
+
+        Country addedCountry=countryRep.save(new Country("it", "Italia", 123));
+        addedCountry.setNumericCode(24);
+        countryRep.save(addedCountry);
+        addedCountry.setNumericCode(123);
+        countryRep.save(addedCountry);
+
+        Language language=new Language("it","Italian");
+        mongoTemplate.insert(language);
+        language.setName("Italiano");
+        mongoTemplate.save(language);
+        Language english= new Language("en","English");
+        mongoTemplate.insert(english);
+
+        MlText si= new MlText("International System of Units");
+        si.set(LangKey.it,"Unità di Misura Internazionale");
+        si.set(LangKey.es,"Unitad de Misuras");
+        SystemOfUnits systemOfUnits=new SystemOfUnits("SI",si);
+        mongoTemplate.insert(systemOfUnits);
+
+        MlText unitName = new MlText("meter");
+        Unit unit = new Unit("m",unitName,systemOfUnits);
+        mongoTemplate.insert(unit);
     }
 
     @Test
-    public void testCountry(){
+        public void testCountry(){
         Country italia = countryRep.findByTwoCharCode("it");
         assertTrue("Country with twoCharCode=it is not Italia: ", italia.getOfficialName().equals("Italia"));
         italia = countryRep.findByNumericCode(123);
         assertTrue("Country with numericCode=123 is not Italia: ", italia.getOfficialName().equals("Italia"));
+    }
+
+    @Test
+    public void testLanguage(){
+        Language italian = languageRep.findByCode("it");
+        assertTrue("Language with Code=it is not Italia: ", italian.getName().equals("Italiano"));
+        italian = languageRep.findByName("Italiano");
+        assertTrue("Language with name=Italian is not Italian ", italian.getCode().equals("it"));
+        Language english = languageRep.findByCode("en");
+        assertTrue("Language with Code=en is not English: ", english.getName().equals("English"));
+    }
+
+    @Test
+    public void testUnits(){
+        Unit meter =  unitRep.findByCode("m");
+        assertTrue("Unit with Code=m is not meter but: "+meter.getName().get(), meter.getName().get().equals("meter"));
+        SystemOfUnits su = meter.getSystem_of_units();
+        assertTrue("SystemOfUnits of m is not SI but: "+su.getCode(), su.getCode().equals("SI"));
     }
 
     @Test

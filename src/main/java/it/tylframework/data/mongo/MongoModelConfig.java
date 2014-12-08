@@ -19,19 +19,31 @@
 
 package it.tylframework.data.mongo;
 
+import it.tylframework.data.mongo.common.Signature;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.domain.AuditorAware;
+import org.springframework.data.mongodb.config.EnableMongoAuditing;
 
 @Configuration
 @EnableAutoConfiguration
 @EnableConfigurationProperties
+@EnableMongoAuditing(auditorAwareRef="tylAuditorAware")
 @ComponentScan
 public class MongoModelConfig {
+
+    @Bean(name = "tylAuditorAware")
+    public AuditorAware<Signature> tylAuditorAware(){
+        return new TylAuditorAware();
+    }
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(MongoModelConfig.class, args);
     }
+
+
 }

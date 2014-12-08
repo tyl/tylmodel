@@ -8,12 +8,14 @@ import java.util.HashMap;
  * Created by mp on 20/11/14.
  */
 public class MlText {
-    String defaultText;
+    String dt;
     HashMap<LangKey,String> mlt = new HashMap<LangKey,String>();
 
-    public MlText(String defaultText){
-        if(!defaultText.isEmpty())
-            this.defaultText=defaultText;
+    public MlText(String dt){
+        if(!dt.isEmpty()){
+            this.dt=dt;
+            set(dt);
+        }
     }
 
     public String get(){

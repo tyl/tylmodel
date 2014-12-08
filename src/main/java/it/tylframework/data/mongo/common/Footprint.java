@@ -1,12 +1,10 @@
 package it.tylframework.data.mongo.common;
 
-import it.tylframework.data.mongo.config.TylContext;
 import lombok.Data;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.LastModifiedBy;
-
-import java.util.Date;
+import lombok.EqualsAndHashCode;
+import org.joda.time.DateTime;
+import org.springframework.data.annotation.*;
+import org.springframework.data.domain.Auditable;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,23 +12,31 @@ import java.util.Date;
  * Date: 18/11/14
  * Time: 22:37
  */
-public @Data
-class Footprint {
-    private Signature created_by;
+@Data
+@EqualsAndHashCode(callSuper=false)
+public class Footprint implements Auditable<Signature,String> {
+
+    @CreatedBy
+    private Signature createdBy;
 
     @CreatedDate
-    private Date created_on;
-
-    private Signature upated_by;
+    private DateTime createdDate;
 
     @LastModifiedBy
-    private Date updated_on;
+    private Signature lastModifiedBy;
 
-    public Footprint(){
-        created_by = TylContext.currentUser();
-        upated_by = TylContext.currentUser();
-    }
+    @LastModifiedDate
+    private DateTime lastModifiedDate;
+
+    @Version
+    private Long version;
 
     @Id
     private String id;
+
+    @Override
+    public boolean isNew() {
+        return (id == null);
+    }
+
 }
