@@ -51,4 +51,8 @@ public class ConversionFactor extends Footprint {
     public BigDecimal convert(BigDecimal quantity){
          return quantity.multiply(conversion_factor);
     }
+
+    public BigDecimal reverseConvert(BigDecimal quantity){
+        return quantity.divide(conversion_factor);
+    }
 }

@@ -150,9 +150,13 @@ public class ModelTests {
         SystemOfUnits su = meter.getSystem_of_units();
         assertTrue("SystemOfUnits of m is not SI but: "+su.getCode(), su.getCode().equals("SI"));
         Unit kilometer = unitRep.findByCode("km");
+
         BigDecimal quantityToConvert=BigDecimal.valueOf(10);
         ConversionFactor fromKmToMeter = convFactRep.findByFromAndTo(kilometer,meter);
         assertEquals(fromKmToMeter.convert(quantityToConvert),BigDecimal.valueOf(10000));
+
+        quantityToConvert=BigDecimal.valueOf(20000);
+        assertEquals(fromKmToMeter.reverseConvert(quantityToConvert),BigDecimal.valueOf(20));
 
     }
 
