@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Created by marco on 24/08/14.
  */
-public interface UnitRepository extends MongoRepository<Unit,String> {
+public interface UnitRepository extends MongoRepository<Unit,String>{
     public Unit findByCode(String code);
     public Unit findByName(MlText name);
 }

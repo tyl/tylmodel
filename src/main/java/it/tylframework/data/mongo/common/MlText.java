@@ -8,19 +8,23 @@ import java.util.HashMap;
  * Created by mp on 20/11/14.
  */
 public class MlText {
-    String dt;
     HashMap<LangKey,String> mlt = new HashMap<LangKey,String>();
+
+    public MlText(){}
 
     public MlText(String dt){
         if(!dt.isEmpty()){
-            this.dt=dt;
             set(dt);
         }
     }
 
+    // return, cascading, the text in current language, or text in default language, or void string
     public String get(){
-        if(mlt.get(TylContext.currentLanguage()).isEmpty())
-            return("");
+        if(mlt.get(TylContext.currentLanguage()) ==null || mlt.get(TylContext.currentLanguage()).isEmpty())
+            if(mlt.get(TylContext.defaultLang) == null || mlt.get(TylContext.defaultLang).isEmpty())
+                return("");
+            else
+                return(mlt.get(TylContext.defaultLang));
         else
             return(mlt.get(TylContext.currentLanguage()));
     }

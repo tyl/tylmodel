@@ -4,20 +4,19 @@ import it.tylframework.data.mongo.basics.*;
 import it.tylframework.data.mongo.basics.Dao.NumeratorDao;
 import it.tylframework.data.mongo.common.LangKey;
 import it.tylframework.data.mongo.common.MlText;
-import it.tylframework.data.mongo.common.Signature;
 import it.tylframework.data.mongo.config.TylContext;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.domain.AuditorAware;
-import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.math.BigDecimal;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 /*
@@ -61,6 +60,9 @@ public class ModelTests {
     private UnitRepository unitRep;
 
     @Autowired
+    private ConversionFactorRepository convFactRep;
+
+    @Autowired
     private MongoTemplate mongoTemplate;
 
     @Autowired
@@ -73,6 +75,7 @@ public class ModelTests {
         languageRep.deleteAll();
         sistemOfUnitsRep.deleteAll();
         unitRep.deleteAll();
+        convFactRep.deleteAll();
 
         Country addedCountry=countryRep.save(new Country("it", "Italia", 123));
         addedCountry.setNumericCode(24);
@@ -94,8 +97,31 @@ public class ModelTests {
         mongoTemplate.insert(systemOfUnits);
 
         MlText unitName = new MlText("meter");
-        Unit unit = new Unit("m",unitName,systemOfUnits);
-        mongoTemplate.insert(unit);
+        Unit m = new Unit("m",unitName,systemOfUnits);
+        Unit km = new Unit("km",unitName,systemOfUnits);
+        mongoTemplate.insert(m);
+        mongoTemplate.insert(km);
+        mongoTemplate.insert(new ConversionFactor(km,m,BigDecimal.valueOf(1000))) ;
+    }
+
+    @Test
+    public void testMlText(){
+        MlText mlt = new MlText();
+        TylContext.defaultLang=LangKey.en;
+        TylContext.setCurrentLanguage(LangKey.it);
+        mlt.set(LangKey.es,"Text in espanol");
+        mlt.set("Testo in italiano");
+
+        assertEquals(mlt.get(LangKey.de),"Testo in italiano");
+        assertEquals(mlt.get(LangKey.it),"Testo in italiano");
+        assertEquals(mlt.get(LangKey.es),"Text in espanol");
+
+        MlText mlt2 = new MlText();
+        assertEquals(mlt2.get(LangKey.es), "");
+
+        MlText mlt3 = new MlText();
+        mlt3.set(LangKey.en,"Text in english");
+        assertEquals(mlt3.get(LangKey.es),"Text in english");
     }
 
     @Test
@@ -116,12 +142,27 @@ public class ModelTests {
         assertTrue("Language with Code=en is not English: ", english.getName().equals("English"));
     }
 
+
     @Test
     public void testUnits(){
         Unit meter =  unitRep.findByCode("m");
         assertTrue("Unit with Code=m is not meter but: "+meter.getName().get(), meter.getName().get().equals("meter"));
         SystemOfUnits su = meter.getSystem_of_units();
         assertTrue("SystemOfUnits of m is not SI but: "+su.getCode(), su.getCode().equals("SI"));
+        Unit kilometer = unitRep.findByCode("km");
+        BigDecimal quantityToConvert=BigDecimal.valueOf(10);
+        ConversionFactor fromKmToMeter = convFactRep.findByFromAndTo(kilometer,meter);
+        assertEquals(fromKmToMeter.convert(quantityToConvert),BigDecimal.valueOf(10000));
+
+    }
+
+    @Test(expected = org.springframework.dao.OptimisticLockingFailureException.class)
+    public void testVersion(){
+        Unit meter =  unitRep.findByCode("m");
+        Unit meter2 =  unitRep.findByCode("m");
+        meter2.getName().set("description modified");
+        mongoTemplate.save(meter2);
+        mongoTemplate.save(meter);
     }
 
     @Test
@@ -129,4 +170,6 @@ public class ModelTests {
         NumeratorType numeratorType = new NumeratorType(new MlText("Fatture"), new MlText("Numeratore Fatture"), true, true, true);
         numeratorDao.createNumeratorType(numeratorType);
     }
+
+
 }

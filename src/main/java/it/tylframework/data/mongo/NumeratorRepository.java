@@ -28,4 +28,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * under the License.
  */
 public interface NumeratorRepository  extends MongoRepository<Numerator, String> {
+    public Numerator findByCode(String code);
 }

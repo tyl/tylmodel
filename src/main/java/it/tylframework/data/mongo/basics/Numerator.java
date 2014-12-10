@@ -15,7 +15,7 @@ import java.util.ArrayList;
 @Data
 @AllArgsConstructor
 public class Numerator extends Footprint {
-    String stdName;
+    String code;
     MlText name;
     MlText description;
     NumeratorType numerator_type;

@@ -21,6 +21,7 @@ package it.tylframework.data.mongo.basics;
 
 import it.tylframework.data.mongo.common.Footprint;
 import lombok.Data;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -38,7 +39,16 @@ import java.math.BigDecimal;
 @Data
 @RequiredArgsConstructor
 public class ConversionFactor extends Footprint {
-     private Unit from_unit;
-     private Unit to_unit;
-     BigDecimal conversion_factor;
+    @NonNull
+    private Unit from;
+
+    @NonNull
+    private Unit to;
+
+    @NonNull
+    BigDecimal conversion_factor;
+
+    public BigDecimal convert(BigDecimal quantity){
+         return quantity.multiply(conversion_factor);
+    }
 }

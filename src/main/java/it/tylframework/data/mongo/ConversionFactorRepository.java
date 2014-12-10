@@ -19,16 +19,16 @@
 
 package it.tylframework.data.mongo;
 
+import it.tylframework.data.mongo.basics.ConversionFactor;
 import it.tylframework.data.mongo.basics.Unit;
-
-import java.math.BigDecimal;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  * Created with IntelliJ IDEA.
  * User: marco
- * Date: 08/12/14
- * Time: 18:21
+ * Date: 10/12/14
+ * Time: 23:49
  */
-public interface UnitTylRepository {
-    public BigDecimal  convert(Unit from, Unit to, BigDecimal quantity);
+public interface ConversionFactorRepository extends MongoRepository<ConversionFactor,String> {
+    public ConversionFactor findByFromAndTo(Unit from_unit, Unit to_unit);
 }
