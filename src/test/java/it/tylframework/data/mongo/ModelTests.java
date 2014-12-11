@@ -16,7 +16,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.math.BigDecimal;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 /*
@@ -66,6 +65,9 @@ public class ModelTests {
     private MongoTemplate mongoTemplate;
 
     @Autowired
+    private NumeratorTypeRepository numeratorTypeRep;
+
+    @Autowired
     private NumeratorDao numeratorDao;
 
     @Before
@@ -76,6 +78,7 @@ public class ModelTests {
         sistemOfUnitsRep.deleteAll();
         unitRep.deleteAll();
         convFactRep.deleteAll();
+        numeratorTypeRep.deleteAll();
 
         Country addedCountry=countryRep.save(new Country("it", "Italia", 123));
         addedCountry.setNumericCode(24);
@@ -90,6 +93,11 @@ public class ModelTests {
         Language english= new Language("en","English");
         mongoTemplate.insert(english);
 
+        NumeratorType invoiceType=new NumeratorType("invoiceType",new MlText("Invoice"));
+        mongoTemplate.insert(invoiceType);
+        NumeratorType salesOrderType=new NumeratorType("salesOrderType",new MlText("Sales Order"));
+        mongoTemplate.insert(salesOrderType);
+
         MlText si= new MlText("International System of Units");
         si.set(LangKey.it,"Unità di Misura Internazionale");
         si.set(LangKey.es,"Unitad de Misuras");
@@ -101,7 +109,7 @@ public class ModelTests {
         Unit km = new Unit("km",unitName,systemOfUnits);
         mongoTemplate.insert(m);
         mongoTemplate.insert(km);
-        mongoTemplate.insert(new ConversionFactor(km,m,BigDecimal.valueOf(1000))) ;
+        mongoTemplate.insert(new ConversionFactor(km,m,BigDecimal.valueOf(1000)));
     }
 
     @Test
@@ -171,9 +179,7 @@ public class ModelTests {
 
     @Test
     public void testNumeratorType() {
-        NumeratorType numeratorType = new NumeratorType(new MlText("Fatture"), new MlText("Numeratore Fatture"), true, true, true);
-        numeratorDao.createNumeratorType(numeratorType);
+        NumeratorType invoiceType = numeratorTypeRep.findByCode("invoiceType");
+        assertEquals(invoiceType.getName().get(),"Invoice");
     }
-
-
 }
