@@ -31,11 +31,11 @@ import org.joda.time.DateTime;
 public class NumeratorFeeder{
     boolean freezed=false;
     @NonNull DateTime starting_date;
-    @NonNull int starting_number=1;
+    @NonNull int starting_number=0;
     @NonNull DateTime ending_date;
     int warning_number=1000;
     int increment_by=1;
-    int last_number_used=1;
+    int last_number_used=0;
     Boolean output_as_string=true;
     String output_format="%0d";
 }

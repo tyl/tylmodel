@@ -27,6 +27,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * Date: 16/09/14
  * Time: 10:51
 */
-public interface NumeratorRepository  extends MongoRepository<Numerator, String> {
+public interface NumeratorRepository  extends MongoRepository<Numerator, String> , NumeratorRepositoryCustom{
     public Numerator findByCode(String code);
 }

@@ -18,6 +18,7 @@
  */
 package org.tylproject.data.mongo.basics;
 
+import org.joda.time.DateTime;
 import org.tylproject.data.mongo.common.Footprint;
 import org.tylproject.data.mongo.common.MlText;
 import lombok.Data;

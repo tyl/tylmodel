@@ -1,5 +1,6 @@
 package org.tylproject.data.mongo;
 
+import org.junit.BeforeClass;
 import org.tylproject.data.mongo.common.LangKey;
 import org.tylproject.data.mongo.common.MlText;
 import org.tylproject.data.mongo.common.Quantity;
@@ -49,31 +50,31 @@ import static org.junit.Assert.assertTrue;
 public class ModelTests {
 
     @Autowired
-    private CountryRepository countryRep;
+    private  CountryRepository countryRep;
 
     @Autowired
-    private LanguageRepository languageRep;
+    private  LanguageRepository languageRep;
 
     @Autowired
-    private SystemOfUnitsRepository sistemOfUnitsRep;
+    private  SystemOfUnitsRepository sistemOfUnitsRep;
 
     @Autowired
-    private UnitRepository unitRep;
+    private  UnitRepository unitRep;
 
     @Autowired
-    private ConversionFactorRepository convFactRep;
+    private  ConversionFactorRepository convFactRep;
 
     @Autowired
-    private MongoTemplate mongoTemplate;
+    private  MongoTemplate mongoTemplate;
 
     @Autowired
-    private NumeratorTypeRepository numeratorTypeRep;
+    private  NumeratorTypeRepository numeratorTypeRep;
 
     @Autowired
-    private NumeratorRepository numeratorRep;
+    private  NumeratorRepository numeratorRep;
 
     @Before
-    public void init() {
+    public  void init() {
         //TylContext.setCurrentUser(Signature.of("mp@marcopancotti.it"));
         countryRep.deleteAll();
         languageRep.deleteAll();
@@ -178,6 +179,9 @@ public class ModelTests {
 
     }
 
+    /**
+     * Test the optimistick versioning of the Auditable objects
+     */
     @Test(expected = org.springframework.dao.OptimisticLockingFailureException.class)
     public void testVersion(){
         Numerator nl =  numeratorRep.findByCode("invNum");
