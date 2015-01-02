@@ -13,28 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.tylproject.data.mongo.basics;
+package org.tylproject.data.mongo.basics.repository;
 
-import lombok.Data;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.TypeAlias;
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.tylproject.data.mongo.basics.Numerator;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
- * Created by mp on 20/11/14.
- */
-@Document(collection="bas_language")
-@TypeAlias("bas_language")
-@Data
-@RequiredArgsConstructor
-public class Language {
-    @Id
-    private String id;
-
-    @NonNull String code;
-    String flag;
-    @NonNull String name;
-
+ * Created with IntelliJ IDEA.
+ * User: marco
+ * Date: 16/09/14
+ * Time: 10:51
+*/
+public interface NumeratorRepository  extends MongoRepository<Numerator, String> , NumeratorRepositoryCustom {
+    public Numerator findByCode(String code);
 }

@@ -13,28 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.tylproject.data.mongo.basics;
+package org.tylproject.data.mongo.basics.repository;
 
-import lombok.Data;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.TypeAlias;
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.tylproject.data.mongo.basics.Language;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
- * Created by mp on 20/11/14.
+ * Created by marco on 25/08/14.
  */
-@Document(collection="bas_language")
-@TypeAlias("bas_language")
-@Data
-@RequiredArgsConstructor
-public class Language {
-    @Id
-    private String id;
-
-    @NonNull String code;
-    String flag;
-    @NonNull String name;
-
+public interface LanguageRepository extends MongoRepository<Language, String> {
+    public Language findByCode(String code);
+    public Language findByName(String name);
 }

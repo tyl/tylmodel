@@ -13,28 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.tylproject.data.mongo.basics;
+
+package org.tylproject.data.mongo.party;
 
 import lombok.Data;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * Created by mp on 20/11/14.
+ * Created by mp on 01/01/15.
  */
-@Document(collection="bas_language")
-@TypeAlias("bas_language")
+@Document(collection = "par_telecomaddress")
+@TypeAlias("par_TelAddress")
 @Data
 @RequiredArgsConstructor
-public class Language {
+public class TelecomAddress {
     @Id
     private String id;
 
-    @NonNull String code;
-    String flag;
-    @NonNull String name;
-
+    private String country_tel_code;
+    private String national_direct_dialing_prefix;
+    private String area_code;
+    private String number;
+    private String extension;
+    private TelPhysicalType physical_type;
+    private TelecomAddressPurpose purpose;
+    @DBRef(lazy = true)
+    private GeographicAddress related_geographic_address;
 }

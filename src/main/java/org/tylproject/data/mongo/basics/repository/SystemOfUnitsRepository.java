@@ -1,11 +1,11 @@
 /*
- * Copyright 2012-2013 the original author or authors.
+ * Copyright 2015 Tyl Consulting s.a.s.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package org.tylproject.data.mongo;
+package org.tylproject.data.mongo.basics.repository;
 
-import java.util.List;
-
+import org.tylproject.data.mongo.basics.SystemOfUnits;
+import org.tylproject.data.mongo.common.MlText;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface CustomerRepository extends MongoRepository<Customer, String> {
-
-	public Customer findByFirstName(String firstName);
-
-	public List<Customer> findByLastName(String lastName);
-
+/**
+ * Created by marco on 24/08/14.
+ */
+public interface SystemOfUnitsRepository extends MongoRepository<SystemOfUnits,String> {
+    public SystemOfUnits findByName(MlText name);
 }

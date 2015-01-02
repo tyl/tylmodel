@@ -13,28 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.tylproject.data.mongo.basics;
+
+package org.tylproject.data.mongo.party;
 
 import lombok.Data;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * Created by mp on 20/11/14.
+ * Created by mp on 01/01/15.
  */
-@Document(collection="bas_language")
-@TypeAlias("bas_language")
+@Document(collection = "par_webaddress")
+@TypeAlias("par_WebAddress")
 @Data
 @RequiredArgsConstructor
-public class Language {
+public class WebAddress {
     @Id
     private String id;
 
-    @NonNull String code;
-    String flag;
-    @NonNull String name;
+    private String web_address;
+    private String login;
+    private String password;
+    private WebAddressType web_address_type;
 
 }

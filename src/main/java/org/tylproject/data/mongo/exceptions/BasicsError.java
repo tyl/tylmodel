@@ -13,28 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.tylproject.data.mongo.basics;
 
-import lombok.Data;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.TypeAlias;
-import org.springframework.data.mongodb.core.mapping.Document;
+package org.tylproject.data.mongo.exceptions;
 
 /**
- * Created by mp on 20/11/14.
+ * Created by mp on 31/12/14.
  */
-@Document(collection="bas_language")
-@TypeAlias("bas_language")
-@Data
-@RequiredArgsConstructor
-public class Language {
-    @Id
-    private String id;
+public enum BasicsError implements TylModelErrorCode{
+    NO_NUMERATOR,
+    NO_NUMERATOR_FORMAT,
+    BAD_NUMERATOR_FORMAT;
 
-    @NonNull String code;
-    String flag;
-    @NonNull String name;
-
+    public String getKey(){
+        return this.getClass().getSimpleName()+"_"+this.toString();
+    }
 }
