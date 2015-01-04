@@ -17,6 +17,7 @@
 package org.tylproject.data.mongo.party;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
@@ -33,9 +34,10 @@ import java.util.ArrayList;
  * Created by mp on 01/01/15.
  */
 @Document(collection = "par_party")
-@TypeAlias("par_Party")
+@TypeAlias("party.Party")
 @Data
 @RequiredArgsConstructor
+@EqualsAndHashCode(callSuper=false)
 /*
 @CompoundIndexes({
         @CompoundIndex(name = "party_identifier", def = "{'identifier_type': 1, 'identifier': 1}")
@@ -51,7 +53,7 @@ public class Party extends Footprint{
     @Indexed
     private String code;
 
-    @Indexed
+    @Indexed(unique = true)
     private String short_name;
 
     private ArrayList<GeographicAddress> geografic_address=new ArrayList<GeographicAddress>();
@@ -59,6 +61,9 @@ public class Party extends Footprint{
     private ArrayList<WebAddress> web_address=new ArrayList<WebAddress>();
     private ArrayList<EmailAddress> email_address=new ArrayList<EmailAddress>();
 
-    @Indexed
+    @Indexed(unique=true)
     private ArrayList<PartyIdentifier> party_identifier=new ArrayList<PartyIdentifier>();
+    private PartyDiscriminator discriminator;
+    private Person person;
+    private Organization organization;
 }

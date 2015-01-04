@@ -19,6 +19,9 @@ package org.tylproject.data.mongo.party;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.mongodb.core.index.CompoundIndex;
+import org.springframework.data.mongodb.core.index.CompoundIndexes;
+
 /**
  * Created by mp on 01/01/15.
  */

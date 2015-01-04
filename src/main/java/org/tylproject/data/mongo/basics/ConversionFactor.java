@@ -16,6 +16,7 @@
 
 package org.tylproject.data.mongo.basics;
 
+import lombok.EqualsAndHashCode;
 import org.tylproject.data.mongo.common.Footprint;
 import org.tylproject.data.mongo.common.Quantity;
 import lombok.Data;
@@ -36,6 +37,7 @@ import java.math.BigDecimal;
 @TypeAlias("bas_ConversionFactor")
 @Data
 @RequiredArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 public class ConversionFactor extends Footprint {
     @NonNull
     private Unit from;

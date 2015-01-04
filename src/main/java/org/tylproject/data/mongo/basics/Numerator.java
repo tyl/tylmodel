@@ -15,6 +15,7 @@
  */
 package org.tylproject.data.mongo.basics;
 
+import lombok.EqualsAndHashCode;
 import org.joda.time.DateTime;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.tylproject.data.mongo.common.Footprint;
@@ -34,6 +35,7 @@ import java.util.ArrayList;
 @TypeAlias("bas_numerator")
 @Data
 @RequiredArgsConstructor
+@EqualsAndHashCode(callSuper=false)
 public class Numerator extends Footprint {
 
     @Indexed(unique = true)

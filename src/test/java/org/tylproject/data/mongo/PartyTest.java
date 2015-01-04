@@ -36,6 +36,12 @@ public class PartyTest {
         party.getParty_identifier().add(new PartyIdentifier(PartyIdentifierType.FISCAL_CODE, "PNCMRC56P14F205U"));
         party.getParty_identifier().add(new PartyIdentifier(PartyIdentifierType.VAT_CODE,"12345678901"));
         mongoTemplate.insert(party);
+        Party party2 = new Party();
+        party2.setCode("party002");
+        party2.setShort_name("Tyl Consulting");
+        party2.getParty_identifier().add(new PartyIdentifier(PartyIdentifierType.FISCAL_CODE, "PNCMRC56P14F205U"));
+        party2.getParty_identifier().add(new PartyIdentifier(PartyIdentifierType.VAT_CODE,"12345678901"));
+        mongoTemplate.insert(party2);
 
     }
 

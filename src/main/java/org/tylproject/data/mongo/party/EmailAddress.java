@@ -26,7 +26,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * Created by mp on 01/01/15.
  */
 @Document(collection = "par_emailaddress")
-@TypeAlias("par_EmailAddress")
+@TypeAlias("party.EmailAddress")
 @Data
 @RequiredArgsConstructor
 public class EmailAddress {
