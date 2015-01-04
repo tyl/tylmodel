@@ -32,6 +32,7 @@ import org.tylproject.data.mongo.basics.NumeratorType;
 import org.tylproject.data.mongo.basics.repository.NumeratorRepository;
 import org.tylproject.data.mongo.basics.repository.NumeratorTypeRepository;
 import org.tylproject.data.mongo.common.MlText;
+import org.tylproject.data.mongo.exceptions.BasicsError;
 import org.tylproject.data.mongo.exceptions.TylModelException;
 
 import java.util.Locale;
@@ -59,7 +60,7 @@ public class NumeratorTest {
 
     @Before
     public void init() {
-        //numeratorTypeRep.deleteAll();
+        numeratorTypeRep.deleteAll();
         numeratorRep.deleteAll();
         NumeratorType invoiceType=new NumeratorType("invoiceType",new MlText("Invoice"));
         mongoTemplate.insert(invoiceType);
@@ -117,13 +118,15 @@ public class NumeratorTest {
         try {
             assertEquals(234, numeratorRep.getNextNum("invNum", new DateTime(2999, 4, 12, 0, 0)));
         } catch (TylModelException e) {
-            String italianMessage = context.getMessage(e.getErrorCode().getKey(), new Object[]{"invNum",new DateTime(2999,4,12,0,0).toString(DateTimeFormat.shortDate())}, Locale.ITALIAN);
-            String englishMesage = context.getMessage(e.getErrorCode().getKey(), new Object[]{"invNum",new DateTime(2999,4,12,0,0).toString(DateTimeFormat.shortDate())}, Locale.ENGLISH);
-            String itmsg=String.format("Nessun numeratore trovato per numeratore con codice %s alla data %s",e.get("code"),((DateTime)e.get("date")).toString(DateTimeFormat.shortDate()));
-            assertEquals(italianMessage, itmsg);
-            String enmsg=String.format("No numerator found for code %s and date %s",e.get("code"),((DateTime)e.get("date")).toString(DateTimeFormat.shortDate()));
-            assertEquals(englishMesage, enmsg);
-            System.out.println(itmsg);
+            if(e.getErrorCode().equals(BasicsError.NO_NUMERATOR)) {
+                String italianMessage = context.getMessage(e.getErrorCode().getKey(), new Object[]{"invNum", new DateTime(2999, 4, 12, 0, 0).toString(DateTimeFormat.shortDate())}, Locale.ITALIAN);
+                String englishMessage = context.getMessage(e.getErrorCode().getKey(), new Object[]{"invNum", new DateTime(2999, 4, 12, 0, 0).toString(DateTimeFormat.shortDate())}, Locale.ENGLISH);
+                String itmsg = String.format("Nessun numeratore trovato per numeratore con codice %s alla data %s", e.get("code"), ((DateTime) e.get("date")).toString(DateTimeFormat.shortDate()));
+                assertEquals(italianMessage, itmsg);
+                String enmsg = String.format("No numerator found for code %s and date %s", e.get("code"), ((DateTime) e.get("date")).toString(DateTimeFormat.shortDate()));
+                assertEquals(englishMessage, enmsg);
+                System.out.println(itmsg);
+            }
         }
     }
 

@@ -16,10 +16,15 @@
 
 package org.tylproject.data.mongo.party;
 
+import lombok.Data;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 /**
  * Created by mp on 01/01/15.
  */
+@Data
+@RequiredArgsConstructor
 public class PartyIdentifier {
-    private IdentifierType idenntifier_type;
-    private String identfier;
+    @NonNull private PartyIdentifierType identifier_type;
+    @NonNull private String identifier;
 }

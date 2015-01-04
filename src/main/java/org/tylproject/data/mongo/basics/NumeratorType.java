@@ -16,6 +16,7 @@
 package org.tylproject.data.mongo.basics;
 
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.tylproject.data.mongo.common.MlText;
 import lombok.Data;
 import lombok.NonNull;
@@ -26,6 +27,7 @@ import org.springframework.data.annotation.TypeAlias;
 /**
  * Created by mp on 20/11/14.
  */
+@Document(collection="bas_numeratorType")
 @TypeAlias("bas_NumeratorType")
 @Data
 @RequiredArgsConstructor

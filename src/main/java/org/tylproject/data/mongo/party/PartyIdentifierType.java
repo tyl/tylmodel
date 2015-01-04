@@ -20,7 +20,7 @@ package org.tylproject.data.mongo.party;
 /**
  * Created by mp on 02/01/15.
  */
-public enum IdentifierType {
+public enum PartyIdentifierType {
     FISCAL_CODE,
     VAT_CODE
 }

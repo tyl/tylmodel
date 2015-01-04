@@ -91,7 +91,7 @@ public class NumeratorRepositoryImpl implements NumeratorRepositoryCustom {
         public DocNumber invoke(String code, DateTime date) throws TylModelException {
             NumeratorFeeder nf = getNextFeeder(code, date);
             number = nf.getLast_number_used() + nf.getIncrement_by();
-            // If you expect a formatted String as output, try toformat the number using the output format
+            // If you expect a formatted String as output, try to format the number using the output format
             if (nf.getOutput_as_string()) {
                 try {
                     formattedNumber = String.format(nf.getOutput_format(), number);
