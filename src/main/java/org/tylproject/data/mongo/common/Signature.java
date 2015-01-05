@@ -27,6 +27,7 @@ import lombok.Data;
 @Data(staticConstructor="of")
 public class Signature{
     private final String signature;
+    private SignatureReason signature_reason;
 
     public static Signature EmptySignature=new Signature("noSignature");
 }

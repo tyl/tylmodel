@@ -14,15 +14,11 @@
  * limitations under the License.
  */
 
-package org.tylproject.data.mongo.party;
-
+package org.tylproject.data.mongo.common;
 
 /**
- * Created by mp on 02/01/15.
+ * Created by mp on 05/01/15.
  */
-public enum PartyIdentifierType {
-    COMPANY_IDENTIFIER,
-    FISCAL_CODE,
-    VAT_CODE,
-    SSN,
+public enum SignatureReason {
+    CREATE, MODIFY, DELETE, FREEZE, UNFREEZE, SUSPEND, REACTIVATE
 }

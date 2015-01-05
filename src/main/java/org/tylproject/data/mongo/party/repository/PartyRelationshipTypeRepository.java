@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 
-package org.tylproject.data.mongo.party;
+package org.tylproject.data.mongo.party.repository;
 
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.tylproject.data.mongo.party.PartyRelationshipType;
 
 /**
- * Created by mp on 02/01/15.
+ * Created by mp on 05/01/15.
  */
-public enum PartyIdentifierType {
-    COMPANY_IDENTIFIER,
-    FISCAL_CODE,
-    VAT_CODE,
-    SSN,
+public interface PartyRelationshipTypeRepository extends MongoRepository<PartyRelationshipType, String> {
 }

@@ -11,6 +11,8 @@ import org.tylproject.data.mongo.basics.repository.PartyRepository;
 import org.tylproject.data.mongo.party.Party;
 import org.tylproject.data.mongo.party.PartyIdentifier;
 import org.tylproject.data.mongo.party.PartyIdentifierType;
+import org.tylproject.data.mongo.party.PartyRelationshipType;
+import org.tylproject.data.mongo.party.repository.PartyRelationshipTypeRepository;
 
 import static org.junit.Assert.assertTrue;
 
@@ -27,6 +29,9 @@ public class PartyTest {
     @Autowired
     private PartyRepository partyRep;
 
+    @Autowired
+    private PartyRelationshipTypeRepository partyRelationshipTypeRep;
+
     @Before
     public void init() {
         partyRep.deleteAll();
@@ -38,16 +43,20 @@ public class PartyTest {
         mongoTemplate.insert(party);
         Party party2 = new Party();
         party2.setCode("party002");
-        party2.setShort_name("Tyl Consulting");
-        party2.getParty_identifier().add(new PartyIdentifier(PartyIdentifierType.FISCAL_CODE, "PNCMRC56P14F205U"));
-        party2.getParty_identifier().add(new PartyIdentifier(PartyIdentifierType.VAT_CODE,"12345678901"));
+        party2.setShort_name("Tyl Consulting2");
+        party2.getParty_identifier().add(new PartyIdentifier(PartyIdentifierType.COMPANY_IDENTIFIER, "PNCMRC56P14F205U"));
+        party2.getParty_identifier().add(new PartyIdentifier(PartyIdentifierType.VAT_CODE,"12345678902"));
         mongoTemplate.insert(party2);
 
     }
 
     @Test
-    public void testDataParty(){
-        assertTrue(true);
+    public void testPartyRelationshipType(){
+        partyRelationshipTypeRep.deleteAll();
+        PartyRelationshipType prt01 = new PartyRelationshipType("prt01");
+        mongoTemplate.save(prt01);
+        PartyRelationshipType prt02 = new PartyRelationshipType("prt02");
+        mongoTemplate.save(prt02);
     }
 }
 

@@ -28,7 +28,7 @@ import org.springframework.data.domain.Auditable;
  * Time: 22:37
  */
 @Data
-@EqualsAndHashCode(callSuper=false)
+@EqualsAndHashCode(callSuper=false, of={"id"})
 public class Footprint implements Auditable<Signature,String> {
 
     @CreatedBy

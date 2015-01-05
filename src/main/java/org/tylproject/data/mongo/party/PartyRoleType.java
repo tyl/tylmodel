@@ -23,7 +23,9 @@ import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.TypeAlias;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.tylproject.data.mongo.basics.FreezeReason;
 import org.tylproject.data.mongo.common.MlText;
 
 /**
@@ -37,7 +39,34 @@ import org.tylproject.data.mongo.common.MlText;
 @Data
 @RequiredArgsConstructor
 public class PartyRoleType {
+    /**
+     * The code of the PartyRoleType
+     */
+    @Indexed(unique=true)
     @NonNull private String code;
+
+    /**
+     * The status (canceled/not canceled) of the PartyRoleType;
+     */
+    private boolean canceled;
+
+    /**
+     * The status (freezed/not freezed) of the PartyRoleType;
+     */
+    private boolean freezed;
+
+    /**
+     * The reason why the PartyRoleType is freezed;
+     */
+    private FreezeReason freeze_reason;
+
+    /**
+     * The multi-language name of the PartyRoleType
+     */
     @NonNull private MlText name;
+
+    /**
+     * The multi-language description of the PartyRoleType
+     */
     private MlText description;
 }

@@ -19,8 +19,13 @@
 
 package org.tylproject.data.mongo.party;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
 import org.joda.time.DateTime;
+import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,6 +33,11 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
  * Date: 04/01/15
  * Time: 19:43
  */
+@Document(collection = "par_partyrole")
+@TypeAlias("party.PartyRole")
+@Data
+@RequiredArgsConstructor
+@EqualsAndHashCode(callSuper=false)
 public class PartyRole {
     @DBRef(lazy=true)
     private boolean canceled;

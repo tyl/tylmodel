@@ -38,12 +38,6 @@ import java.util.ArrayList;
 @Data
 @RequiredArgsConstructor
 @EqualsAndHashCode(callSuper=false)
-/*
-@CompoundIndexes({
-        @CompoundIndex(name = "party_identifier", def = "{'identifier_type': 1, 'identifier': 1}")
-})
-
-*/
 public class Party extends Footprint{
     private Boolean freezed=false;
 
