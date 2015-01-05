@@ -22,6 +22,7 @@ package org.tylproject.data.mongo.party;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -39,6 +40,8 @@ import org.tylproject.data.mongo.common.MlText;
 @Data
 @RequiredArgsConstructor
 public class PartyRoleType {
+    @Id
+    private String id;
     /**
      * The code of the PartyRoleType
      */

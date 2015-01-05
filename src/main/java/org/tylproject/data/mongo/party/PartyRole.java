@@ -21,11 +21,15 @@ package org.tylproject.data.mongo.party;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.joda.time.DateTime;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.tylproject.data.mongo.basics.FreezeReason;
+import org.tylproject.data.mongo.common.Footprint;
+import org.tylproject.data.mongo.common.MlText;
 
 /**
  * Created with IntelliJ IDEA.
@@ -38,13 +42,46 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @RequiredArgsConstructor
 @EqualsAndHashCode(callSuper=false)
-public class PartyRole {
-    @DBRef(lazy=true)
-    private boolean canceled;
+public class PartyRole extends Footprint {
+    /**
+     * The status (canceled/not canceled) of the party role;
+     */
+    private boolean canceled=false;
+
+    /**
+     * The status (freezed/not freezed) of the party role;
+     */
+    private boolean freezed=false;
+
+    /**
+     * The reason why the PartyRole is freezed;
+     */
+    private FreezeReason freezeReason;
+
+    /**
+     * The Party that has this Role
+     */
+    @NonNull @DBRef(lazy=true)
     private Party party;
-    private PartyRoleType party_role_type;
-    private String name;
+
+    /**
+     * The Type of the PartyRole
+     */
+    @NonNull private PartyRoleType party_role_type;
+
+    /**
+     * The name of the PartyRole. In instance "customer", "vendor", etc.
+     */
+    private MlText name;
+
+    /**
+     * The starting date of validity of this Role for the Party
+     */
     private DateTime from_date;
-    private DateTime to_date;
+
+    /**
+     * The ending date of validity of this Role for the Party
+     */
+    private DateTime thru_date;
 
 }

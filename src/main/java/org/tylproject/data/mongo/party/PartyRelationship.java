@@ -50,6 +50,9 @@ import org.tylproject.data.mongo.common.MlText;
  *
  * Created by mp on 05/01/15.
  */
+/*
+ TODO - Fare in modo che i set di left e right Party e PartyRole siano condizionati dai constraints
+ */
 @Document(collection = "par_partyrelationship")
 @TypeAlias("party.PartyRelationship")
 @Data
