@@ -29,8 +29,6 @@ import java.lang.reflect.Array;
 /**
  * Created by mp on 01/01/15.
  */
-@Document(collection = "par_geographicaddress")
-@TypeAlias("GeoAddress")
 @Data
 @RequiredArgsConstructor
 public class GeographicAddress {

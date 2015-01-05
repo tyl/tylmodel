@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package org.tylproject.data.mongo.party;
+package org.tylproject.data.mongo.party.repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.tylproject.data.mongo.party.Party;
 
 /**
- * Created by mp on 01/01/15.
+ * Created by mp on 05/01/15.
  */
-public enum TelPhysicalType {
-    FIXED,
-    CELLULAR,
-    PAGER,
+public interface PartyRepository extends MongoRepository<Party, String> {
 }

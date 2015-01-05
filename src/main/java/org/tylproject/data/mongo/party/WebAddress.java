@@ -26,8 +26,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * Created by mp on 01/01/15.
  */
-@Document(collection = "par_webaddress")
-@TypeAlias("par_WebAddress")
 @Data
 @RequiredArgsConstructor
 public class WebAddress {

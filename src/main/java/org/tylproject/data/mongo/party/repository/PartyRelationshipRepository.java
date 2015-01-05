@@ -14,26 +14,13 @@
  * limitations under the License.
  */
 
-package org.tylproject.data.mongo.party;
+package org.tylproject.data.mongo.party.repository;
 
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.TypeAlias;
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.tylproject.data.mongo.party.PartyRelationship;
 
 /**
- * Created by mp on 01/01/15.
+ * Created by mp on 05/01/15.
  */
-@Data
-@RequiredArgsConstructor
-public class EmailAddress {
-    @Id
-    private String id;
-
-    private String web_address;
-    private String login;
-    private String password;
-    private WebAddressType web_address_type;
-
+public interface PartyRelationshipRepository extends MongoRepository<PartyRelationship, String> {
 }
