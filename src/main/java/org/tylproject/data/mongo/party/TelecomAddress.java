@@ -37,7 +37,7 @@ public class TelecomAddress {
     private String area_code;
     private String number;
     private String extension;
-    private TelPhysicalType physical_type;
+    private TelecomPhysicalType physical_type;
     private TelecomAddressPurpose purpose;
     @DBRef(lazy = true)
     private GeographicAddress related_geographic_address;
