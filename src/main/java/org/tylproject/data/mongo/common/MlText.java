@@ -29,12 +29,12 @@ public class MlText {
 
     public MlText(String dt){
         if(!dt.isEmpty()){
-            set(dt);
+            setText(dt);
         }
     }
 
     // return, cascading, the text in current language, or text in default language, or void string
-    public String get(){
+    public String getText(){
         if(mlt.get(TylContext.currentLanguage()) ==null || mlt.get(TylContext.currentLanguage()).isEmpty())
             if(mlt.get(TylContext.defaultLang) == null || mlt.get(TylContext.defaultLang).isEmpty())
                 return("");
@@ -45,22 +45,22 @@ public class MlText {
     }
 
     public String invoke() {
-        return get();
+        return getText();
     }
 
-    public String get(LangKey lang)
+    public String getText(LangKey lang)
     {
         if (mlt.get(lang)==null)
-            return get();
+            return getText();
         else
             return mlt.get(lang);
     }
 
-    public void set(String text){
+    public void setText(String text){
         mlt.put(TylContext.currentLanguage(), text);
     }
 
-    public void set(LangKey lang, String text){
+    public void setText(LangKey lang, String text){
         mlt.put(lang,text);
     }
 }
