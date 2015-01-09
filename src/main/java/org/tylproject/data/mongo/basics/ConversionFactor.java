@@ -46,7 +46,7 @@ public class ConversionFactor extends Footprint {
     private Unit to;
 
     @NonNull
-    BigDecimal conversion_factor;
+    BigDecimal conversionFactor;
 
     /**
      * Convert a quantity from a Unit to another Unit multiplying the value of the quantity by the conversion_factor and assigning
@@ -57,7 +57,7 @@ public class ConversionFactor extends Footprint {
      */
 
     public Quantity convert(Quantity quantity){
-         return quantity.multiply(conversion_factor,to.getCode());
+         return quantity.multiply(conversionFactor,to.getCode());
     }
 
     /**
@@ -68,6 +68,6 @@ public class ConversionFactor extends Footprint {
      * @return the converted Quantity
      */
     public Quantity reverseConvert(Quantity quantity){
-        return quantity.divide(conversion_factor, from.getCode());
+        return quantity.divide(conversionFactor, from.getCode());
     }
 }

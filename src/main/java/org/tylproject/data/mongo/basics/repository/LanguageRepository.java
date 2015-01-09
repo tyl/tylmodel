@@ -15,13 +15,14 @@
  */
 package org.tylproject.data.mongo.basics.repository;
 
+import org.bson.types.ObjectId;
 import org.tylproject.data.mongo.basics.Language;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  * Created by marco on 25/08/14.
  */
-public interface LanguageRepository extends MongoRepository<Language, String> {
+public interface LanguageRepository extends MongoRepository<Language, ObjectId> {
     public Language findByCode(String code);
     public Language findByName(String name);
 }

@@ -24,6 +24,7 @@ import org.joda.time.DateTime;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.tylproject.data.mongo.common.Footprint;
 import org.tylproject.data.mongo.common.MlText;
 import org.tylproject.data.mongo.common.SignatureReason;
 
@@ -36,12 +37,12 @@ import java.util.Date;
 @TypeAlias("party.PartySignature")
 @Data
 @RequiredArgsConstructor
-public class PartySignature {
+public class PartySignature extends Footprint {
     /**
      * The code of the party who signed the transaction or the modification of a transaction
      */
     @NonNull
-    private String signer_party_code;
+    private String signerPartyCode;
 
     /**
      * DateTime of the signature
@@ -62,5 +63,5 @@ public class PartySignature {
      * Ref to the Party who signed the transaction
      */
     @DBRef(lazy=true)
-    private Party signer_party;
+    private Party signerParty;
 }

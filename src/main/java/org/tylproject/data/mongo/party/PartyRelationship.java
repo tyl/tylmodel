@@ -73,44 +73,44 @@ public class PartyRelationship extends Footprint {
     /**
      * The reason why the relationship is freezed;
      */
-    private FreezeReason freeze_reason;
+    private FreezeReason freezeReason;
 
     /**
      * The type of the relationship. See the related Document;
      */
-    private PartyRelationshipType party_relationship_type;
+    private PartyRelationshipType partyRelationshipType;
 
     /**
      * The PartyRole at the left side of the relationship
      */
     @DBRef(lazy=true)
-    private PartyRole left_party_role;
+    private PartyRole leftPartyRole;
 
     /**
      * The code of the Party at the left side of the relationship
      */
-    private String left_party_code;
+    private String leftPartyCode;
 
     /**
      * The PartyRole at the right side of the relationship
      */
     @DBRef(lazy=true)
-    private PartyRole right_party_role;
+    private PartyRole rightPartyRole;
 
     /**
      * The code of the Party at the right side of the relationship
      */
-    private String right_party_code;
+    private String rightPartyCode;
 
     /**
      * The starting datetime of the relationship
      */
-    private DateTime from_date;
+    private DateTime fromDate;
 
     /**
      * The ending datetime of the relationship
      */
-    private DateTime thru_date;
+    private DateTime thruDate;
 
     /**
      * The PartyRelationship that further qualifies the relationship
@@ -121,5 +121,5 @@ public class PartyRelationship extends Footprint {
      * The specific identifier of the relationship
      */
     @Indexed
-    private PartyIdentifier identifier_in_relationship;
+    private PartyIdentifier identifierInRelationship;
 }

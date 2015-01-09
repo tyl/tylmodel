@@ -32,31 +32,29 @@ import java.lang.reflect.Array;
 @Data
 @RequiredArgsConstructor
 public class GeographicAddress {
-    @Id
-    private String id;
-
     private GeographicAddressPurpose purpose;
-    private String street_name;
-    private String additional_street_name;
-    private String block_name;
-    private String building_name;
-    private String building_number;
+    private String streetName;
+    private String additionalStreetName;
+    private String blockName;
+    private String buildingName;
+    private String buildingNumber;
     private String postbox;
     private String floor;
     private String room;
-    private String in_house_mail;
+    private String inHouseMail;
     private String department;
-    private String mark_attention;
-    private String mark_care;
-    private String plot_identification;
-    private String city_subdivision_name;
-    private String city_name;
-    private String postal_zone;
-    private String country_subentity;
-    private String country_subentity_code;
+    private String markAttention;
+    private String markCare;
+    private String plotIdentification;
+    private String citySubdivision_name;
+    private String cityName;
+    private String postalZone;
+    private String countrySubentity;
+    private String countrySubentityCode;
     private String region;
     private String district;
-    private String timezone_offset;
+    private String timezoneOffset;
+    // TODO - fare campo che diventa un arrey tramite Conversion
     private int pos[] = new int[2];
 
     @DBRef(lazy = true)

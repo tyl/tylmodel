@@ -26,13 +26,13 @@ import org.joda.time.DateTime;
 @Data
 @RequiredArgsConstructor
 public class NumeratorFeeder{
-    boolean freezed=false;
-    @NonNull DateTime starting_date;
-    @NonNull int starting_number=0;
-    @NonNull DateTime ending_date;
-    int warning_number=1000;
-    int increment_by=1;
-    int last_number_used=0;
-    Boolean output_as_string=true;
-    String output_format="%0d";
+    boolean frozen=false;
+    @NonNull DateTime startingDate;
+    @NonNull int startingNumber=0;
+    @NonNull DateTime endingDate;
+    int warningNumber=1000;
+    int incrementBy=1;
+    int lastNumberUsed=0;
+    Boolean outputAsString=true;
+    String outputFormat="%0d";
 }

@@ -15,13 +15,14 @@
  */
 package org.tylproject.data.mongo.basics.repository;
 
+import org.bson.types.ObjectId;
 import org.tylproject.data.mongo.basics.Country;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  * Created by marco on 24/08/14.
  */
-public interface CountryRepository extends MongoRepository<Country,String> {
-    public Country findByTwoCharCode(String two_char_code);
-    public Country findByNumericCode(Integer numeric_code);
+public interface CountryRepository extends MongoRepository<Country,ObjectId> {
+    public Country findByTwoCharCode(String twoCharCode);
+    public Country findByNumericCode(Integer numericCode);
 }

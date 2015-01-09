@@ -29,12 +29,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @RequiredArgsConstructor
 public class WebAddress {
-    @Id
-    private String id;
-
-    private String web_address;
+    private String webAddress;
     private String login;
     private String password;
-    private WebAddressType web_address_type;
+    private WebAddressType webAddressType;
 
 }

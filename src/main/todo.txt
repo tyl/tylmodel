@@ -1,4 +1,5 @@
 TODO Gestire l'ambiente di test (database) distinto da quello di delivery
 TODO Documentare come funziona la gestone dei messaggi di errore e la loro localizzazione
 TODO Fare in modo che funzionino i metodi @BeforeClass malgrado Spring (problema di utilizzo degli oggetti statici)
-TODO Uniformare Language tra gestione messaggi e getione Tyl
+TODO Uniformare Language tra gestione messaggi e gestione Tyl
+TODO Sviluppare la classe Signature in modo che ospiti il Document "prima" e "dopo" la transazione

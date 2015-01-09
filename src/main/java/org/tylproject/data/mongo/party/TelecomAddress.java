@@ -18,6 +18,7 @@ package org.tylproject.data.mongo.party;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -30,15 +31,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @RequiredArgsConstructor
 public class TelecomAddress {
     @Id
-    private String id;
+    private ObjectId id;
 
-    private String country_tel_code;
-    private String national_direct_dialing_prefix;
-    private String area_code;
+    private String countryTelCode;
+    private String nationalDirectDialingPrefix;
+    private String areaCode;
     private String number;
     private String extension;
-    private TelecomPhysicalType physical_type;
+    private TelecomPhysicalType physicalType;
     private TelecomAddressPurpose purpose;
+
     @DBRef(lazy = true)
-    private GeographicAddress related_geographic_address;
+    private GeographicAddress relatedGeographicAddress;
 }

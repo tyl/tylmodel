@@ -15,6 +15,7 @@
  */
 package org.tylproject.data.mongo.basics;
 
+import org.bson.types.ObjectId;
 import org.tylproject.data.mongo.common.MlText;
 import lombok.Data;
 import lombok.NonNull;
@@ -32,7 +33,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @RequiredArgsConstructor
 public class SystemOfUnits{
     @Id
-    private String id;
+    private ObjectId id;
 
     @NonNull String code;
     @NonNull MlText name;

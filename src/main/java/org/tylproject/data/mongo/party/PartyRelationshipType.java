@@ -19,6 +19,7 @@ package org.tylproject.data.mongo.party;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -37,7 +38,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class PartyRelationshipType {
     @Id
-    private String id;
+    private ObjectId id;
 
     @Indexed(unique=true)
     @NonNull
@@ -46,6 +47,7 @@ public class PartyRelationshipType {
     private MlText name;
     private MlText description;
 
+    // TODO - fare predicato che include i due testi
     @Indexed
     private MlText predicateLeftToRight;
 

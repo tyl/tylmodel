@@ -16,11 +16,12 @@
 
 package org.tylproject.data.mongo.party.repository;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.tylproject.data.mongo.party.PartyRelationship;
 
 /**
  * Created by mp on 05/01/15.
  */
-public interface PartyRelationshipRepository extends MongoRepository<PartyRelationship, String> {
+public interface PartyRelationshipRepository extends MongoRepository<PartyRelationship, ObjectId> {
 }

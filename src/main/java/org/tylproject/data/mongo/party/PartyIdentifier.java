@@ -28,6 +28,6 @@ import org.springframework.data.mongodb.core.index.CompoundIndexes;
 @Data
 @RequiredArgsConstructor
 public class PartyIdentifier {
-    @NonNull private PartyIdentifierType identifier_type;
+    @NonNull private PartyIdentifierType identifierType;
     @NonNull private String identifier;
 }

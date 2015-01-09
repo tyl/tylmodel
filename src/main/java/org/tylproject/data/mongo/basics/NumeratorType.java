@@ -15,6 +15,7 @@
  */
 package org.tylproject.data.mongo.basics;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.tylproject.data.mongo.common.MlText;
@@ -33,7 +34,7 @@ import org.springframework.data.annotation.TypeAlias;
 @RequiredArgsConstructor
 public class NumeratorType{
     @Id
-    private String id;
+    private ObjectId id;
 
     @Indexed(unique = true)
     @NonNull String code;
@@ -41,7 +42,7 @@ public class NumeratorType{
     @NonNull
     MlText name;
     MlText description;
-    Boolean ordered_by;
-    Boolean automatic_attribution;
-    Boolean manual_admitted;
+    Boolean orderedBy;
+    Boolean automaticAttribution;
+    Boolean manualAdmitted;
 }

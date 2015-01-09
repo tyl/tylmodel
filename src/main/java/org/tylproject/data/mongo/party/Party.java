@@ -29,6 +29,9 @@ import org.tylproject.data.mongo.basics.FreezeReason;
 import org.tylproject.data.mongo.common.Footprint;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by mp on 01/01/15.
@@ -39,24 +42,24 @@ import java.util.ArrayList;
 @RequiredArgsConstructor
 @EqualsAndHashCode(callSuper=false)
 public class Party extends Footprint{
-    private Boolean freezed=false;
+    private Boolean frozen=false;
 
-    private FreezeReason freeze_reason;
+    private FreezeReason freezeReason;
     private boolean canceled=false;
 
-    @Indexed
+    @Indexed(sparse = true)
     private String code;
 
-    @Indexed(unique = true)
-    private String short_name;
+    @Indexed(unique = true, sparse = true)
+    private String shortName;
 
-    private ArrayList<GeographicAddress> geografic_address=new ArrayList<GeographicAddress>();
-    private ArrayList<TelecomAddress> telecom_address=new ArrayList<TelecomAddress>();
-    private ArrayList<WebAddress> web_address=new ArrayList<WebAddress>();
-    private ArrayList<EmailAddress> email_address=new ArrayList<EmailAddress>();
+    private List<GeographicAddress> geographicAddress=new ArrayList<GeographicAddress>();
+    private List<TelecomAddress> telecomAddress=new ArrayList<TelecomAddress>();
+    private List<WebAddress> webAddress=new ArrayList<WebAddress>();
+    private List<EmailAddress> emailAddress=new ArrayList<EmailAddress>();
 
-    @Indexed(unique=true)
-    private ArrayList<PartyIdentifier> party_identifier=new ArrayList<PartyIdentifier>();
+    @Indexed(sparse = true)
+    private Set<PartyIdentifier> partyIdentifier=new HashSet<PartyIdentifier>();
     private PartyDiscriminator discriminator;
     private Person person;
     private Organization organization;

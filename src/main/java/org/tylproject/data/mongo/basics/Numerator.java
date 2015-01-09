@@ -43,6 +43,6 @@ public class Numerator extends Footprint {
 
     @NonNull MlText name;
     MlText description;
-    @NonNull NumeratorType numerator_type;
-    ArrayList<NumeratorFeeder> numerator_feeders = new ArrayList<NumeratorFeeder>();
+    @NonNull NumeratorType numeratorType;
+    ArrayList<NumeratorFeeder> numeratorFeeders = new ArrayList<NumeratorFeeder>();
 }

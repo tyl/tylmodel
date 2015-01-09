@@ -76,8 +76,8 @@ public class NumeratorRepositoryImpl implements NumeratorRepositoryCustom {
         Query byCode = query(where("code").is(code));
         numerator = mongoOps.findOne(byCode, Numerator.class);
         NumeratorFeeder feeder = null;
-        for (NumeratorFeeder nf : numerator.getNumerator_feeders())
-            if (((nf.getStarting_date().isBefore(date) || nf.getStarting_date().isEqual(date)) && (nf.getEnding_date().isAfter(date) || nf.getEnding_date().isEqual(date))) && !nf.isFreezed()){
+        for (NumeratorFeeder nf : numerator.getNumeratorFeeders())
+            if (((nf.getStartingDate().isBefore(date) || nf.getStartingDate().isEqual(date)) && (nf.getEndingDate().isAfter(date) || nf.getEndingDate().isEqual(date))) && !nf.isFrozen()){
                 feeder = nf;
                 break;
             }
@@ -90,16 +90,16 @@ public class NumeratorRepositoryImpl implements NumeratorRepositoryCustom {
 
         public DocNumber invoke(String code, DateTime date) throws TylModelException {
             NumeratorFeeder nf = getNextFeeder(code, date);
-            number = nf.getLast_number_used() + nf.getIncrement_by();
+            number = nf.getLastNumberUsed() + nf.getIncrementBy();
             // If you expect a formatted String as output, try to format the number using the output format
-            if (nf.getOutput_as_string()) {
+            if (nf.getOutputAsString()) {
                 try {
-                    formattedNumber = String.format(nf.getOutput_format(), number);
+                    formattedNumber = String.format(nf.getOutputFormat(), number);
                 } catch (IllegalFormatException ife) {
                     throw new TylModelException(BasicsError.BAD_NUMERATOR_FORMAT)
                             .set("code", code)
                             .set("date", date)
-                            .set("format", nf.getOutput_format());
+                            .set("format", nf.getOutputFormat());
                 } catch (NullPointerException npe) {
                     throw new TylModelException(BasicsError.NO_NUMERATOR_FORMAT)
                             .set("code", code)
@@ -107,7 +107,7 @@ public class NumeratorRepositoryImpl implements NumeratorRepositoryCustom {
                 }
             }
             // update the last number used
-            nf.setLast_number_used(number);
+            nf.setLastNumberUsed(number);
             try {
                 mongoOps.save(numerator);
                 return this;

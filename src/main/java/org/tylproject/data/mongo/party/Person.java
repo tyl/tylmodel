@@ -38,12 +38,12 @@ public class Person {
     private DateTime date_of_birth;
     private Gender gender;
     private String honorific;
-    private String given_name;
-    private String middle_name;
-    private String family_name;
-    private String preferred_name;
-    private String mother_maiden_name;
+    private String givenName;
+    private String middleName;
+    private String familyName;
+    private String preferredName;
+    private String motherMaidenName;
     private String suffix;
     private String ethnicity;
-    private Set<PersonName> person_names=new HashSet<PersonName>();
+    private Set<PersonName> personNames=new HashSet<PersonName>();
 }

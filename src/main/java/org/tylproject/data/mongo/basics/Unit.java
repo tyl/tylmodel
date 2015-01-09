@@ -15,6 +15,7 @@
  */
 package org.tylproject.data.mongo.basics;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.tylproject.data.mongo.common.MlText;
 import lombok.Data;
@@ -34,7 +35,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @RequiredArgsConstructor
 public class Unit {
     @Id
-    private String id;
+    private ObjectId id;
 
     @Indexed(unique=true)
     @NonNull String code;
@@ -42,6 +43,6 @@ public class Unit {
     @NonNull  MlText name;
     MlText description;
 
-    @NonNull  @DBRef(lazy = true) SystemOfUnits system_of_units;
+    @NonNull  @DBRef(lazy = true) SystemOfUnits systemOfUnits;
 }
 

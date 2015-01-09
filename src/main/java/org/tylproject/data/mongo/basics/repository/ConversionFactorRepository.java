@@ -16,6 +16,7 @@
 
 package org.tylproject.data.mongo.basics.repository;
 
+import org.bson.types.ObjectId;
 import org.tylproject.data.mongo.basics.ConversionFactor;
 import org.tylproject.data.mongo.basics.Unit;
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -26,6 +27,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * Date: 10/12/14
  * Time: 23:49
  */
-public interface ConversionFactorRepository extends MongoRepository<ConversionFactor,String> {
+public interface ConversionFactorRepository extends MongoRepository<ConversionFactor,ObjectId> {
     public ConversionFactor findByFromAndTo(Unit from_unit, Unit to_unit);
 }

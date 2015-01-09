@@ -51,7 +51,7 @@ public class PartyRole extends Footprint {
     /**
      * The status (freezed/not freezed) of the party role;
      */
-    private boolean freezed=false;
+    private boolean frozen=false;
 
     /**
      * The reason why the PartyRole is freezed;
@@ -67,7 +67,7 @@ public class PartyRole extends Footprint {
     /**
      * The Type of the PartyRole
      */
-    @NonNull private PartyRoleType party_role_type;
+    @NonNull private PartyRoleType partyRoleType;
 
     /**
      * The name of the PartyRole. In instance "customer", "vendor", etc.
@@ -77,11 +77,11 @@ public class PartyRole extends Footprint {
     /**
      * The starting date of validity of this Role for the Party
      */
-    private DateTime from_date;
+    private DateTime fromDate;
 
     /**
      * The ending date of validity of this Role for the Party
      */
-    private DateTime thru_date;
+    private DateTime thruDate;
 
 }

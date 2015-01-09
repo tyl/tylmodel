@@ -16,6 +16,7 @@
 
 package org.tylproject.data.mongo.basics.repository;
 
+import org.bson.types.ObjectId;
 import org.tylproject.data.mongo.basics.SystemOfUnits;
 import org.tylproject.data.mongo.common.MlText;
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -23,6 +24,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 /**
  * Created by marco on 24/08/14.
  */
-public interface SystemOfUnitsRepository extends MongoRepository<SystemOfUnits,String> {
+public interface SystemOfUnitsRepository extends MongoRepository<SystemOfUnits,ObjectId> {
     public SystemOfUnits findByName(MlText name);
 }

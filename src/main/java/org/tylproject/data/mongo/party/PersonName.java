@@ -34,14 +34,14 @@ import org.tylproject.data.mongo.common.MlText;
 @RequiredArgsConstructor
 public class PersonName {
     private String honorific;
-    private String given_name;
-    private String middle_name;
-    private String family_name;
-    private String preferred_name;
-    private String mother_maiden_name;
+    private String givenName;
+    private String middleName;
+    private String familyName;
+    private String preferredName;
+    private String motherMaidenName;
     private String suffix;
-    private DateTime valid_from;
-    private DateTime valid_thru;
+    private DateTime validFrom;
+    private DateTime validThru;
     private MlText comment;
-    private MlText name_use;
+    private MlText nameUse;
 }

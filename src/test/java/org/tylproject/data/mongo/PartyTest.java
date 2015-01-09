@@ -23,7 +23,6 @@ import static org.junit.Assert.assertTrue;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = MongoModelConfig.class)
 public class PartyTest {
-
     @Autowired
     private MongoTemplate mongoTemplate;
 
@@ -48,15 +47,15 @@ public class PartyTest {
         partyRep.deleteAll();
         Party party = new Party();
         party.setCode("party001");
-        party.setShort_name("Tyl Consulting");
-        party.getParty_identifier().add(new PartyIdentifier(PartyIdentifierType.FISCAL_CODE, "PNCMRC56P14F205U"));
-        party.getParty_identifier().add(new PartyIdentifier(PartyIdentifierType.VAT_CODE,"12345678901"));
+        party.setShortName("Tyl Consulting");
+        party.getPartyIdentifier().add(new PartyIdentifier(PartyIdentifierType.FISCAL_CODE, "PNCMRC56P14F205U"));
+        party.getPartyIdentifier().add(new PartyIdentifier(PartyIdentifierType.VAT_CODE,"12345678901"));
         mongoTemplate.insert(party);
         Party party2 = new Party();
         party2.setCode("party002");
-        party2.setShort_name("Tyl Consulting2");
-        party2.getParty_identifier().add(new PartyIdentifier(PartyIdentifierType.COMPANY_IDENTIFIER, "PNCMRC56P14F205U"));
-        party2.getParty_identifier().add(new PartyIdentifier(PartyIdentifierType.VAT_CODE,"12345678902"));
+        party2.setShortName("Tyl Consulting2");
+        party2.getPartyIdentifier().add(new PartyIdentifier(PartyIdentifierType.COMPANY_IDENTIFIER, "PNCMRC56P14F205U"));
+        party2.getPartyIdentifier().add(new PartyIdentifier(PartyIdentifierType.VAT_CODE,"12345678902"));
         mongoTemplate.insert(party2);
 
     }
@@ -102,11 +101,11 @@ public class PartyTest {
         mongoTemplate.save(partyRole02);
 
         PartyRelationship pr = new PartyRelationship();
-        pr.setParty_relationship_type(prt01);
-        pr.setLeft_party_role(partyRole01);
-        pr.setRight_party_role(partyRole02);
-        pr.setLeft_party_code(partyRole01.getName().get());
-        pr.setRight_party_code(partyRole02.getName().get());
+        pr.setPartyRelationshipType(prt01);
+        pr.setLeftPartyRole(partyRole01);
+        pr.setRightPartyRole(partyRole02);
+        pr.setLeftPartyCode(partyRole01.getName().getText());
+        pr.setRightPartyCode(partyRole02.getName().getText());
         mongoTemplate.save(pr);
     }
 }

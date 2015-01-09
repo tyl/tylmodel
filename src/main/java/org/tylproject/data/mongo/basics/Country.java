@@ -19,6 +19,7 @@ package org.tylproject.data.mongo.basics;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -33,7 +34,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @RequiredArgsConstructor
 public class Country {
     @Id
-    private String id;
+    private ObjectId id;
 
     @Indexed(unique = true)
     @NonNull String twoCharCode;

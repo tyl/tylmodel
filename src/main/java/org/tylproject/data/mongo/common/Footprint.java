@@ -17,6 +17,7 @@ package org.tylproject.data.mongo.common;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
 import org.springframework.data.annotation.*;
 import org.springframework.data.domain.Auditable;
@@ -29,7 +30,7 @@ import org.springframework.data.domain.Auditable;
  */
 @Data
 @EqualsAndHashCode(callSuper=false, of={"id"})
-public class Footprint implements Auditable<Signature,String> {
+public class Footprint implements Auditable<Signature,ObjectId> {
 
     @CreatedBy
     private Signature createdBy;
@@ -47,7 +48,7 @@ public class Footprint implements Auditable<Signature,String> {
     private Long version;
 
     @Id
-    private String id;
+    private ObjectId id;
 
     @Override
     public boolean isNew() {

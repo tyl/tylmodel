@@ -19,6 +19,7 @@ package org.tylproject.data.mongo.party;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -34,7 +35,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class PartyRelationshipQualifier {
 
     @Id
-    private String id;
+    private ObjectId id;
 
     /**
      * The status (canceled/not canceled) of the relationship qualifier;
@@ -49,55 +50,55 @@ public class PartyRelationshipQualifier {
     /**
      * code of the Party that qualifies the relationship if at the left side of the relationship
      */
-    private String left_qualifier_party_code;
+    private String leftQualifierPartyCode;
 
     /**
      * Party that qualifies the relationship if at the left side of the relationship
      */
     @DBRef(lazy=true)
-    private Party left_qualifier_party;
+    private Party leftQualifierParty;
 
     /**
      * Party code that qualifies the relationship if at the right side of the relationship
      */
-    private String right_qualifier_party_code;
+    private String rightQualifierPartyCode;
 
     /**
      * Party that qualifies the relationship if at the right side of the relationship
      */
     @DBRef(lazy=true)
-    private Party right_qualifier_party;
+    private Party rightQualifierParty;
 
     /**
      * The PartyRoleType code that qualifies the relationship if at the left side of the relationship
      */
-    private String left_qualifier_role_type_code;
+    private String leftQualifierRoleTypeCode;
 
     /**
      * The PartyRoleType that qualifies the relationship if at the left side of the relationship
      */
     @DBRef(lazy=true)
-    private PartyRoleType left_qualifier_role_type;
+    private PartyRoleType leftQualifierRoleType;
 
     /**
      * The PartyRoleType code that qualifies the relationship if at the right side of the relationship
      */
-    private String right_qualifier_role_type_code;
+    private String rightQualifierRoleTypeCode;
 
     /**
      * The PartyRoleType that qualifies the relationship if at the riigh side of the relationship
      */
     @DBRef(lazy=true)
-    private PartyRoleType right_qualifier_role_type;
+    private PartyRoleType rightQualifierRoleType;
 
     /**
      * The PartyRelationshipTypeCode that further qualifies the relationship
      */
-    private String relationship_type_qualifier_code;
+    private String relationshipTypeQualifierCode;
 
     /**
      * The PartyRelationshipType that further qualifies the relationship
      */
     @DBRef(lazy = true)
-    private PartyRelationshipType relationship_type_qualifier;
+    private PartyRelationshipType relationshipTypeQualifier;
 }

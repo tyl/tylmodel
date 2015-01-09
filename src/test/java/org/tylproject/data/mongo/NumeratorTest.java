@@ -70,24 +70,24 @@ public class NumeratorTest {
 
 
         NumeratorFeeder inv2015 = new NumeratorFeeder(new DateTime(2015,1,1,0,0),new DateTime(2015,12,31,23,59));
-        inv2015.setLast_number_used(233);
+        inv2015.setLastNumberUsed(233);
         // TODO gestire il controllo sul fatto che l'output deve essere formattato;
         // TODO fare in modo che il test sulla data corrente funzioni sempre
-        inv2015.setOutput_as_string(true);
-        inv2015.setOutput_format("INVNUM%06d");
-        invoiceNumerator.getNumerator_feeders().add(inv2015);
+        inv2015.setOutputAsString(true);
+        inv2015.setOutputFormat("INVNUM%06d");
+        invoiceNumerator.getNumeratorFeeders().add(inv2015);
 
 
         NumeratorFeeder inv2016 = new NumeratorFeeder(new DateTime(2016,1,1,0,0),new DateTime(2016,12,31,23,59));
-        invoiceNumerator.getNumerator_feeders().add(inv2016);
+        invoiceNumerator.getNumeratorFeeders().add(inv2016);
         NumeratorFeeder inv2017 = new NumeratorFeeder(new DateTime(2017,1,1,0,0),new DateTime(2017,12,31,23,59));
-        inv2017.setOutput_as_string(true);
-        inv2017.setOutput_format("INVNUM%06d");
-        invoiceNumerator.getNumerator_feeders().add(inv2017);
+        inv2017.setOutputAsString(true);
+        inv2017.setOutputFormat("INVNUM%06d");
+        invoiceNumerator.getNumeratorFeeders().add(inv2017);
         NumeratorFeeder inv2018 = new NumeratorFeeder(new DateTime(2018,1,1,0,0),new DateTime(2018,12,31,23,59));
-        inv2018.setOutput_as_string(true);
-        inv2018.setOutput_format("INVNUM%06d");
-        invoiceNumerator.getNumerator_feeders().add(inv2018);
+        inv2018.setOutputAsString(true);
+        inv2018.setOutputFormat("INVNUM%06d");
+        invoiceNumerator.getNumeratorFeeders().add(inv2018);
         mongoTemplate.insert(invoiceNumerator);
     }
 

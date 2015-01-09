@@ -37,6 +37,6 @@ import java.util.Set;
 public class Organization {
     private String organizationName;
     private MlText description;
-    private Set<OrganizationName> organization_names = new HashSet<OrganizationName>();
+    private Set<OrganizationName> organizationNames = new HashSet<OrganizationName>();
     private Set<Person> contacts = new HashSet<Person>();
 }

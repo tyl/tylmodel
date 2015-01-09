@@ -15,6 +15,7 @@
  */
 package org.tylproject.data.mongo.basics.repository;
 
+import org.bson.types.ObjectId;
 import org.tylproject.data.mongo.basics.Numerator;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
@@ -24,6 +25,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * Date: 16/09/14
  * Time: 10:51
 */
-public interface NumeratorRepository  extends MongoRepository<Numerator, String> , NumeratorRepositoryCustom {
+public interface NumeratorRepository  extends MongoRepository<Numerator, ObjectId> , NumeratorRepositoryCustom {
     public Numerator findByCode(String code);
 }
