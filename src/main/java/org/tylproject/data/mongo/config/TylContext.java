@@ -24,13 +24,18 @@ import org.tylproject.data.mongo.common.Signature;
 public class TylContext {
     public static LangKey defaultLang = LangKey.it;
 
-    private static ThreadLocal<LangKey> currentLang = new ThreadLocal<LangKey>();
-    private static ThreadLocal<Signature> currentUsr = new ThreadLocal<Signature>();
-
-    static {
-        currentUsr.set(Signature.EmptySignature);
-        currentLang.set(defaultLang);
-    }
+    private static ThreadLocal<LangKey> currentLang = new ThreadLocal<LangKey>() {
+        @Override
+        protected LangKey initialValue() {
+            return defaultLang;
+        }
+    };
+    private static ThreadLocal<Signature> currentUsr = new ThreadLocal<Signature>() {
+        @Override
+        protected Signature initialValue() {
+            return Signature.EmptySignature;
+        }
+    };
 
     public static Signature currentUser(){
         return currentUsr.get();

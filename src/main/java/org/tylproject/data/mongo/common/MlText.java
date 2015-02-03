@@ -17,13 +17,15 @@ package org.tylproject.data.mongo.common;
 
 import org.tylproject.data.mongo.config.TylContext;
 
+import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by mp on 20/11/14.
  */
 public class MlText {
-    HashMap<LangKey,String> mlt = new HashMap<LangKey,String>();
+    Map<LangKey,String> mlt = new EnumMap<LangKey,String>(LangKey.class);
 
     public MlText(){}
 
