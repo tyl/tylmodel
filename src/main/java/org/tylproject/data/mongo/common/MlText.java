@@ -15,8 +15,12 @@
  */
 package org.tylproject.data.mongo.common;
 
-import org.tylproject.data.mongo.config.TylContext;
+import org.springframework.data.annotation.Transient;
+import org.tylproject.data.mongo.config.Context;
+import org.tylproject.data.mongo.config.ThreadSafeContext;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,45 +29,79 @@ import java.util.Map;
  * Created by mp on 20/11/14.
  */
 public class MlText {
-    Map<LangKey,String> mlt = new EnumMap<LangKey,String>(LangKey.class);
 
-    public MlText(){}
+
+    transient final Context tylContext;
+    final Map<LangKey,String> mlt = new EnumMap<LangKey,String>(LangKey.class);
+
+    @Inject
+    public MlText(@Named("tylContext") Context ctx) {
+        this.tylContext = ctx;
+    }
+
+    public MlText(){
+        this.tylContext = new ThreadSafeContext();
+    }
 
     public MlText(String dt){
+        this();
         if(!dt.isEmpty()){
             setText(dt);
         }
     }
 
-    // return, cascading, the text in current language, or text in default language, or void string
+    @Transient
+    public Context getTylContext() {
+        return tylContext;
+    }
+
+    // return, cascading, the text in current language, or text in default language, or empty string
     public String getText(){
-        if(mlt.get(TylContext.currentLanguage()) ==null || mlt.get(TylContext.currentLanguage()).isEmpty())
-            if(mlt.get(TylContext.defaultLang) == null || mlt.get(TylContext.defaultLang).isEmpty())
-                return("");
-            else
-                return(mlt.get(TylContext.defaultLang));
-        else
-            return(mlt.get(TylContext.currentLanguage()));
+        final Context tylContext = getTylContext();
+
+        String localizedText = mlt.get(tylContext.currentLanguage());
+
+        if(isTextEmpty(localizedText)) {
+            localizedText = mlt.get(tylContext.defaultLanguage());
+            if (isTextEmpty(localizedText)) {
+                return "";
+            }
+        }
+
+        return localizedText;
     }
 
     public String invoke() {
         return getText();
     }
 
-    public String getText(LangKey lang)
-    {
-        if (mlt.get(lang)==null)
-            return getText();
-        else
-            return mlt.get(lang);
+    public String getText(LangKey lang) {
+        String localizedText = mlt.get(lang);
+        if (isTextEmpty(localizedText)) {
+            localizedText = mlt.get(tylContext.defaultLanguage());
+            if (isTextEmpty(localizedText)) {
+                localizedText = "";
+            }
+        }
+
+        return localizedText;
+    }
+
+    private boolean isTextEmpty(String text) {
+        return text == null || text.isEmpty();
     }
 
     public void setText(String text){
-        mlt.put(TylContext.currentLanguage(), text);
+        mlt.put(tylContext.currentLanguage(), text);
     }
 
     public void setText(LangKey lang, String text){
         mlt.put(lang,text);
+    }
+
+    @Override
+    public String toString() {
+        return getText();
     }
 }
 
