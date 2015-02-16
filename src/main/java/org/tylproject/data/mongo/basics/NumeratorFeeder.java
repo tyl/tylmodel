@@ -24,15 +24,27 @@ import org.joda.time.DateTime;
  * Created by mp on 20/11/14.
  */
 @Data
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class NumeratorFeeder{
     boolean frozen=false;
-    @NonNull DateTime startingDate;
+    DateTime startingDate;
     @NonNull int startingNumber=0;
-    @NonNull DateTime endingDate;
+    DateTime endingDate;
     int warningNumber=1000;
     int incrementBy=1;
     int lastNumberUsed=0;
     Boolean outputAsString=true;
     String outputFormat="%0d";
+
+    public NumeratorFeeder() {
+    }
+    public NumeratorFeeder(DateTime startingDate,
+                            DateTime endingDate) {
+
+        this.startingDate = startingDate;
+        this.startingNumber = startingNumber;
+        this.endingDate = endingDate;
+
+    }
+
 }
