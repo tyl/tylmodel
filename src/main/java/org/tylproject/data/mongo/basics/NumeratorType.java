@@ -36,7 +36,7 @@ public class NumeratorType{
     @Id
     private ObjectId id;
 
-    @Indexed(unique = true)
+//    @Indexed(unique = true)
     @NonNull String code;
 
     @NonNull

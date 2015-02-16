@@ -27,6 +27,7 @@ import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by mp on 20/11/14.
@@ -34,15 +35,28 @@ import java.util.ArrayList;
 @Document(collection="bas_numerator")
 @TypeAlias("bas_numerator")
 @Data
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @EqualsAndHashCode(callSuper=false)
 public class Numerator extends Footprint {
 
     @Indexed(unique = true)
-    @NonNull String code;
+    //@NonNull
+    String code;
 
-    @NonNull MlText name;
+    //@NonNull
+    MlText name;
     MlText description;
-    @NonNull NumeratorType numeratorType;
-    ArrayList<NumeratorFeeder> numeratorFeeders = new ArrayList<NumeratorFeeder>();
+    //@NonNull
+    NumeratorType numeratorType;
+    List<NumeratorFeeder> numeratorFeeders = new ArrayList<NumeratorFeeder>();
+
+
+    public Numerator() {}
+    public Numerator(String code, MlText name, NumeratorType numeratorType) {
+        this.code = code;
+        this.name = name;
+        this.numeratorType = numeratorType;
+    }
+
+
 }
