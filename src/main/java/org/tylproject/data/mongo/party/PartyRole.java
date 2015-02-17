@@ -61,13 +61,13 @@ public class PartyRole extends Footprint {
     /**
      * The Party that has this Role
      */
-    @NonNull @DBRef(lazy=true)
+    @DBRef(lazy=true)
     private Party party;
 
     /**
      * The Type of the PartyRole
      */
-    @NonNull private PartyRoleType partyRoleType;
+    private PartyRoleType partyRoleType;
 
     /**
      * The name of the PartyRole. In instance "customer", "vendor", etc.

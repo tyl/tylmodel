@@ -34,7 +34,7 @@ import java.util.Set;
  */
 @Data
 @RequiredArgsConstructor
-public class Organization {
+public class Organization{
     private String organizationName;
     private MlText description;
     private Set<OrganizationName> organizationNames = new HashSet<OrganizationName>();
