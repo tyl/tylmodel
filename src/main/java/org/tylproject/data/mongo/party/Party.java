@@ -47,7 +47,7 @@ public class Party extends Footprint{
     private FreezeReason freezeReason;
     private boolean canceled=false;
 
-    @Indexed(sparse = true)
+    //@Indexed(sparse = true)
     private String code;
 
     @Indexed(unique = true, sparse = true)
@@ -58,7 +58,7 @@ public class Party extends Footprint{
     private List<WebAddress> webAddress=new ArrayList<WebAddress>();
     private List<EmailAddress> emailAddress=new ArrayList<EmailAddress>();
 
-    @Indexed(sparse = true)
+    //@Indexed(sparse = true)
     private Set<PartyIdentifier> partyIdentifier=new HashSet<PartyIdentifier>();
     private PartyDiscriminator discriminator;
     private Person person;
