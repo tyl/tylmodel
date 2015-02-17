@@ -46,7 +46,7 @@ public class PartyRoleType {
     /**
      * The code of the PartyRoleType
      */
-    @Indexed(unique=true)
+//    @Indexed(unique=true)
     @NonNull private String code;
 
     /**

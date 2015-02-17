@@ -61,7 +61,7 @@ public class PartyRole extends Footprint {
     /**
      * The Party that has this Role
      */
-    @DBRef(lazy=true)
+//    @DBRef(lazy=true)
     private Party party;
 
     /**
