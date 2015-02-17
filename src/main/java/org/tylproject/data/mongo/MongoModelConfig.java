@@ -16,6 +16,9 @@
 
 package org.tylproject.data.mongo;
 
+import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.index.Index;
 import org.tylproject.data.mongo.common.Signature;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -26,6 +29,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.tylproject.data.mongo.config.TylAuditorAware;
+import org.tylproject.data.mongo.party.Party;
 
 @Configuration
 @EnableAutoConfiguration
@@ -37,6 +41,11 @@ public class MongoModelConfig {
     @Bean(name = "tylAuditorAware")
     public AuditorAware<Signature> tylAuditorAware(){
         return new TylAuditorAware();
+    }
+
+    public static void createIndexes(MongoOperations mongoOps){
+        mongoOps.indexOps(Party.class).ensureIndex(new Index().on("code", Sort.Direction.ASC));
+        mongoOps.indexOps(Party.class).ensureIndex(new Index().on("partyIdentifier.identifier", Sort.Direction.ASC));
     }
 
     public static void main(String[] args) throws Exception {

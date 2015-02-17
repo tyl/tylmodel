@@ -50,7 +50,7 @@ public class Party extends Footprint{
     //@Indexed(sparse = true)
     private String code;
 
-    @Indexed(unique = true, sparse = true)
+    //@Indexed(unique = true, sparse = true)
     private String shortName;
 
     private List<GeographicAddress> geographicAddress=new ArrayList<GeographicAddress>();
