@@ -15,14 +15,9 @@
  */
 package org.tylproject.data.mongo.common;
 
-import org.springframework.data.annotation.Transient;
 import org.tylproject.data.mongo.config.Context;
-import org.tylproject.data.mongo.config.ThreadSafeContext;
 
-import javax.inject.Inject;
-import javax.inject.Named;
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -30,17 +25,11 @@ import java.util.Map;
  */
 public class MlText {
 
-
-    transient final Context tylContext;
+    private Context tylContext;
     final Map<LangKey,String> mlt = new EnumMap<LangKey,String>(LangKey.class);
 
-    @Inject
-    public MlText(@Named("tylContext") Context ctx) {
-        this.tylContext = ctx;
-    }
-
-    public MlText(){
-        this.tylContext = new ThreadSafeContext();
+    public MlText(Context tylContext) {
+        this.tylContext = tylContext;
     }
 
     public MlText(String dt){
@@ -50,14 +39,21 @@ public class MlText {
         }
     }
 
-    @Transient
+    public MlText() {}
+
+    public void setTylContext(Context tylContext) {
+        this.tylContext = tylContext;
+    }
+
     public Context getTylContext() {
         return tylContext;
     }
 
     // return, cascading, the text in current language, or text in default language, or empty string
     public String getText(){
+        assertTylContextIsSet();
         final Context tylContext = getTylContext();
+
 
         String localizedText = mlt.get(tylContext.currentLanguage());
 
@@ -76,8 +72,11 @@ public class MlText {
     }
 
     public String getText(LangKey lang) {
+
         String localizedText = mlt.get(lang);
         if (isTextEmpty(localizedText)) {
+            assertTylContextIsSet();
+
             localizedText = mlt.get(tylContext.defaultLanguage());
             if (isTextEmpty(localizedText)) {
                 localizedText = "";
@@ -87,11 +86,18 @@ public class MlText {
         return localizedText;
     }
 
+    private void assertTylContextIsSet() {
+        if (tylContext == null) {
+            throw new IllegalStateException("No tylContext, cannot infer currentLanguage");
+        }
+    }
+
     private boolean isTextEmpty(String text) {
         return text == null || text.isEmpty();
     }
 
     public void setText(String text){
+        assertTylContextIsSet();
         mlt.put(tylContext.currentLanguage(), text);
     }
 
