@@ -25,89 +25,17 @@ import java.util.Map;
  */
 public class MlText {
 
-    private Context tylContext;
     final Map<LangKey,String> mlt = new EnumMap<LangKey,String>(LangKey.class);
-
-    public MlText(Context tylContext) {
-        this.tylContext = tylContext;
-    }
-
-    public MlText(String dt){
-        this();
-        if(!dt.isEmpty()){
-            setText(dt);
-        }
-    }
-
     public MlText() {}
-
-    public void setTylContext(Context tylContext) {
-        this.tylContext = tylContext;
-    }
-
-    public Context getTylContext() {
-        return tylContext;
-    }
-
-    // return, cascading, the text in current language, or text in default language, or empty string
-    public String getText(){
-        assertTylContextIsSet();
-        final Context tylContext = getTylContext();
-
-
-        String localizedText = mlt.get(tylContext.currentLanguage());
-
-        if(isTextEmpty(localizedText)) {
-            localizedText = mlt.get(tylContext.defaultLanguage());
-            if (isTextEmpty(localizedText)) {
-                return "";
-            }
-        }
-
-        return localizedText;
-    }
-
-    public String invoke() {
-        return getText();
-    }
-
     public String getText(LangKey lang) {
-
-        String localizedText = mlt.get(lang);
-        if (isTextEmpty(localizedText)) {
-            assertTylContextIsSet();
-
-            localizedText = mlt.get(tylContext.defaultLanguage());
-            if (isTextEmpty(localizedText)) {
-                localizedText = "";
-            }
-        }
-
-        return localizedText;
+        return mlt.get(lang);
     }
-
-    private void assertTylContextIsSet() {
-        if (tylContext == null) {
-            throw new IllegalStateException("No tylContext, cannot infer currentLanguage");
-        }
-    }
-
-    private boolean isTextEmpty(String text) {
-        return text == null || text.isEmpty();
-    }
-
-    public void setText(String text){
-        assertTylContextIsSet();
-        mlt.put(tylContext.currentLanguage(), text);
-    }
-
     public void setText(LangKey lang, String text){
         mlt.put(lang,text);
     }
-
     @Override
     public String toString() {
-        return getText();
+        return mlt.values().toString();
     }
 }
 
