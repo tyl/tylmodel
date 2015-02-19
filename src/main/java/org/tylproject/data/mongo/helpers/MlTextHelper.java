@@ -15,9 +15,13 @@ public class MlTextHelper {
     @Inject @Named("tylContext")
     private Context tylContext;
 
-    public static MlTextHelper of(MlText mlText) { return new MlTextHelper(mlText); }
+
     public MlTextHelper(MlText mlText) {
         this.mlText = mlText;
+    }
+    public MlTextHelper(String currentText) {
+        this(new MlText());
+        this.setCurrentText(currentText);
     }
 
     public void setTylContext(Context tylContext) {
@@ -28,6 +32,9 @@ public class MlTextHelper {
         return tylContext;
     }
 
+    public MlText getMlText() {
+        return mlText;
+    }
 
     /**
      * return, cascading, the text in current language,

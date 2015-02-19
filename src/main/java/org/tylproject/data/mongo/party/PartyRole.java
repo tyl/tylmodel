@@ -40,7 +40,7 @@ import org.tylproject.data.mongo.common.MlText;
 @Document(collection = "par_partyrole")
 @TypeAlias("party.PartyRole")
 @Data
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @EqualsAndHashCode(callSuper=false)
 public class PartyRole extends Footprint {
     /**
@@ -84,4 +84,11 @@ public class PartyRole extends Footprint {
      */
     private DateTime thruDate;
 
+    public PartyRole(){}
+
+
+    public PartyRole(Party party, PartyRoleType partyRoleType) {
+        this.party = party;
+        this.partyRoleType = partyRoleType;
+    }
 }

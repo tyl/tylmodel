@@ -20,7 +20,7 @@ import org.tylproject.data.mongo.basics.repository.*;
 import org.tylproject.data.mongo.common.LangKey;
 import org.tylproject.data.mongo.common.MlText;
 import org.tylproject.data.mongo.common.Quantity;
-import org.tylproject.data.mongo.config.TylContext;
+import org.tylproject.data.mongo.config.Context;
 import org.joda.time.DateTime;
 import org.junit.Assert;
 import org.junit.Before;
@@ -31,6 +31,7 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.tylproject.data.mongo.basics.*;
+import org.tylproject.data.mongo.helpers.MlTextHelper;
 
 import java.math.BigDecimal;
 
@@ -65,6 +66,21 @@ public class ModelTests {
     @Autowired
     private NumeratorRepository numeratorRep;
 
+    @Autowired
+    private Context tylContext;
+
+    @Autowired
+    MlTextHelperFactory mlTextHelperFactory;
+
+    private MlTextHelper mlTextHelper(MlText mlText) {
+        return mlTextHelperFactory.of(mlText);
+    }
+
+    private MlText mlTextOf(String text) {
+        return mlTextHelperFactory.mlTextOf(text);
+    }
+
+
     @Before
     public  void init() {
         //TylContext.setCurrentUser(Signature.of("mp@marcopancotti.it"));
@@ -89,11 +105,11 @@ public class ModelTests {
         Language english= new Language("en","English");
         mongoTemplate.insert(english);
 
-        NumeratorType invoiceType=new NumeratorType("invoiceType",new MlText("Invoice"));
+        NumeratorType invoiceType=new NumeratorType("invoiceType", mlTextOf("Invoice"));
         mongoTemplate.insert(invoiceType);
-        NumeratorType salesOrderType=new NumeratorType("salesOrderType",new MlText("Sales Order"));
+        NumeratorType salesOrderType=new NumeratorType("salesOrderType", mlTextOf("Sales Order"));
         mongoTemplate.insert(salesOrderType);
-        Numerator invoiceNumerator = new Numerator("invNum",new MlText("Invoice Numerator"),invoiceType);
+        Numerator invoiceNumerator = new Numerator("invNum", mlTextOf("Invoice Numerator"),invoiceType);
         NumeratorFeeder inv2014 = new NumeratorFeeder(new DateTime(2014,1,1,0,0),new DateTime(2014,12,31,23,59));
         inv2014.setLastNumberUsed(233);
         invoiceNumerator.getNumeratorFeeders().add(inv2014);
@@ -101,13 +117,13 @@ public class ModelTests {
         invoiceNumerator.getNumeratorFeeders().add(inv2015);
         mongoTemplate.insert(invoiceNumerator);
 
-        MlText si= new MlText("International System of Units");
+        MlText si= mlTextOf("International System of Units");
         si.setText(LangKey.it, "Unità di Misura Internazionale");
         si.setText(LangKey.es, "Unitad de Misuras");
         SystemOfUnits systemOfUnits=new SystemOfUnits("SI",si);
         mongoTemplate.insert(systemOfUnits);
 
-        MlText unitName = new MlText("meter");
+        MlText unitName = mlTextOf("meter");
         Unit m = new Unit("m",unitName,systemOfUnits);
         Unit km = new Unit("km",unitName,systemOfUnits);
         mongoTemplate.insert(m);
@@ -118,21 +134,30 @@ public class ModelTests {
     @Test
     public void testMlText(){
         MlText mlt = new MlText();
-        TylContext.defaultLang=LangKey.en;
-        TylContext.setCurrentLanguage(LangKey.it);
-        mlt.setText(LangKey.es, "Text in espanol");
-        mlt.setText("Testo in italiano");
+        MlTextHelper mlth = mlTextHelper(mlt);
 
-        assertEquals(mlt.getText(LangKey.de),"Testo in italiano");
-        assertEquals(mlt.getText(LangKey.it),"Testo in italiano");
-        assertEquals(mlt.getText(LangKey.es),"Text in espanol");
+        final String
+            es = "Texto en español",
+            en = "Text in English",
+            it = "Testo in italiano";
+
+        tylContext.setDefaultLanguage(LangKey.en);
+        tylContext.setCurrentLanguage(LangKey.it);
+
+        mlt.setText(LangKey.es, es);
+        mlt.setText(LangKey.en, en);
+        mlth.setCurrentText(it);
+
+        assertEquals(mlth.getText(LangKey.de),en);
+        assertEquals(mlth.getText(LangKey.it),it);
+        assertEquals(mlth.getText(LangKey.es),es);
 
         MlText mlt2 = new MlText();
         assertEquals(mlt2.getText(LangKey.es), "");
 
         MlText mlt3 = new MlText();
-        mlt3.setText(LangKey.en, "Text in english");
-        assertEquals(mlt3.getText(LangKey.es),"Text in english");
+        mlt3.setText(LangKey.en, en);
+        assertEquals(mlTextHelperFactory.of(mlt3).getText(LangKey.es),en);
     }
 
     @Test
@@ -157,7 +182,9 @@ public class ModelTests {
     @Test
     public void testUnits(){
         Unit meter =  unitRep.findByCode("m");
-        assertTrue("Unit with Code=m is not meter but: "+meter.getName().getText(), meter.getName().getText().equals("meter"));
+        assertTrue("Unit with Code=m is not meter but: " +
+                mlTextHelper(meter.getName()).getCurrentText(),
+                mlTextHelper(meter.getName()).getCurrentText().equals("meter"));
         SystemOfUnits su = meter.getSystemOfUnits();
         assertTrue("SystemOfUnits of m is not SI but: "+su.getCode(), su.getCode().equals("SI"));
         Unit kilometer = unitRep.findByCode("km");
@@ -178,7 +205,7 @@ public class ModelTests {
     public void testVersion(){
         Numerator nl =  numeratorRep.findByCode("invNum");
         Numerator nl2 =  numeratorRep.findByCode("invNum");
-        nl2.getName().setText("description modified");
+        mlTextHelper(nl2.getName()).setCurrentText("description modified");
         mongoTemplate.save(nl2);
         mongoTemplate.save(nl);
     }
@@ -186,6 +213,6 @@ public class ModelTests {
     @Test
     public void testNumeratorType() {
         NumeratorType invoiceType = numeratorTypeRep.findByCode("invoiceType");
-        Assert.assertEquals(invoiceType.getName().getText(), "Invoice");
+        Assert.assertEquals(mlTextHelper(invoiceType.getName()).getCurrentText(), "Invoice");
     }
 }

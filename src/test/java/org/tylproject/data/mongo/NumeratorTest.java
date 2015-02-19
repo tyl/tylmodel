@@ -31,7 +31,6 @@ import org.tylproject.data.mongo.basics.NumeratorFeeder;
 import org.tylproject.data.mongo.basics.NumeratorType;
 import org.tylproject.data.mongo.basics.repository.NumeratorRepository;
 import org.tylproject.data.mongo.basics.repository.NumeratorTypeRepository;
-import org.tylproject.data.mongo.common.MlText;
 import org.tylproject.data.mongo.exceptions.BasicsError;
 import org.tylproject.data.mongo.exceptions.TylModelException;
 
@@ -57,16 +56,18 @@ public class NumeratorTest {
     @Autowired
     private ApplicationContext context;
 
+    @Autowired
+    MlTextHelperFactory mlTextHelperFactory;
 
     @Before
     public void init() {
         numeratorTypeRep.deleteAll();
         numeratorRep.deleteAll();
-        NumeratorType invoiceType=new NumeratorType("invoiceType",new MlText("Invoice"));
+        NumeratorType invoiceType=new NumeratorType("invoiceType", mlTextHelperFactory.mlTextOf("Invoice"));
         mongoTemplate.insert(invoiceType);
-        NumeratorType salesOrderType=new NumeratorType("salesOrderType",new MlText("Sales Order"));
+        NumeratorType salesOrderType=new NumeratorType("salesOrderType", mlTextHelperFactory.mlTextOf("Sales Order"));
         mongoTemplate.insert(salesOrderType);
-        Numerator invoiceNumerator = new Numerator("invNum",new MlText("Invoice Numerator"),invoiceType);
+        Numerator invoiceNumerator = new Numerator("invNum", mlTextHelperFactory.mlTextOf("Invoice Numerator"),invoiceType);
 
 
         NumeratorFeeder inv2015 = new NumeratorFeeder(new DateTime(2015,1,1,0,0),new DateTime(2015,12,31,23,59));

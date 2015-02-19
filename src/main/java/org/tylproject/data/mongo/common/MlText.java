@@ -28,7 +28,8 @@ public class MlText {
     final Map<LangKey,String> mlt = new EnumMap<LangKey,String>(LangKey.class);
     public MlText() {}
     public String getText(LangKey lang) {
-        return mlt.get(lang);
+        String value = mlt.get(lang);
+        return value == null? "" : value;
     }
     public void setText(LangKey lang, String text){
         mlt.put(lang,text);

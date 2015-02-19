@@ -8,7 +8,6 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.tylproject.data.mongo.party.repository.PartyRepository;
-import org.tylproject.data.mongo.common.MlText;
 import org.tylproject.data.mongo.party.*;
 import org.tylproject.data.mongo.party.repository.PartyRelationshipRepository;
 import org.tylproject.data.mongo.party.repository.PartyRelationshipTypeRepository;
@@ -41,6 +40,8 @@ public class PartyTest {
     @Autowired
     private PartyRoleRepository partyRoleRep;
 
+    @Autowired
+    MlTextHelperFactory mlTextHelperFactory;
 
     @Before
     public void init() {
@@ -79,10 +80,10 @@ public class PartyTest {
 
 
         PartyRelationshipType prt01=new PartyRelationshipType("prt02");
-        prt01.setDescription(new MlText("prt01description"));
+        prt01.setDescription(mlTextHelperFactory.mlTextOf("prt01description"));
         mongoTemplate.save(prt01);
-        PartyRoleType proletype01 = new PartyRoleType("prolet01",new MlText("partyroletype01"));
-        PartyRoleType proletype02 = new PartyRoleType("prolet02",new MlText("partyroletype02"));
+        PartyRoleType proletype01 = new PartyRoleType("prolet01", mlTextHelperFactory.mlTextOf("partyroletype01"));
+        PartyRoleType proletype02 = new PartyRoleType("prolet02", mlTextHelperFactory.mlTextOf("partyroletype02"));
         mongoTemplate.save(proletype01);
         mongoTemplate.save(proletype02);
 
@@ -94,9 +95,9 @@ public class PartyTest {
         mongoTemplate.save(party02);
 
         PartyRole partyRole01 = new PartyRole(party01,proletype01);
-        partyRole01.setName(new MlText("role01name"));
+        partyRole01.setName(mlTextHelperFactory.mlTextOf("role01name"));
         PartyRole partyRole02 = new PartyRole(party02,proletype02);
-        partyRole02.setName(new MlText("role02name"));
+        partyRole02.setName(mlTextHelperFactory.mlTextOf("role02name"));
         mongoTemplate.save(partyRole01);
         mongoTemplate.save(partyRole02);
 
@@ -104,8 +105,8 @@ public class PartyTest {
         pr.setPartyRelationshipType(prt01);
         pr.setLeftPartyRole(partyRole01);
         pr.setRightPartyRole(partyRole02);
-        pr.setLeftPartyCode(partyRole01.getName().getText());
-        pr.setRightPartyCode(partyRole02.getName().getText());
+        pr.setLeftPartyCode(mlTextHelperFactory.of(partyRole01.getName()).getCurrentText());
+        pr.setRightPartyCode(mlTextHelperFactory.of(partyRole02.getName()).getCurrentText());
         mongoTemplate.save(pr);
     }
 }
