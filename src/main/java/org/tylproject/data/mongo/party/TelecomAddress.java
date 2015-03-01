@@ -27,6 +27,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * Created by mp on 01/01/15.
  */
+//TODO Gestire come da libro una stringa il cui ritorno sia strutturato (getFormattedTelecomAddress)
 @Data
 @RequiredArgsConstructor
 public class TelecomAddress {
@@ -43,4 +44,8 @@ public class TelecomAddress {
 
     @DBRef(lazy = true)
     private GeographicAddress relatedGeographicAddress;
+
+    public String getFormattedTelecomNumber(){
+        return countryTelCode+"("+nationalDirectDialingPrefix+areaCode+")"+number+"-"+extension;
+    }
 }

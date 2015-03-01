@@ -13,7 +13,7 @@ import org.tylproject.data.mongo.party.PartyRole;
  * Created by marco on 01/03/15.
  */
 @Document(collection="crm_organization")
-@TypeAlias("crm_OrganizationCRM")
+@TypeAlias("crm_Organization")
 @Data
 public class Organization extends PartyRole {
 

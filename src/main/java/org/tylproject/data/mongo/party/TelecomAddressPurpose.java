@@ -20,7 +20,10 @@ package org.tylproject.data.mongo.party;
  * Created by mp on 01/01/15.
  */
 public enum TelecomAddressPurpose {
-    BUSNESS,
+    BUSINESS,
     HOME,
-    PERSONAL;
+    PERSONAL,
+    MAINBUSINESS,
+    MAINHOME,
+    MAINPERSONAL
 }
