@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0eb4f2c-0cb0-4d7d-8514-9ebd8393bb35" name="Default" comment="Removed some indexes and NonNull">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="d0eb4f2c-0cb0-4d7d-8514-9ebd8393bb35" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/crm/BeforeOrganizationListener.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Industry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/crm/Organization.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Country.java" afterPath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Country.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/FreezeReason.java" afterPath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/FreezeReason.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Numerator.java" afterPath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Numerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/NumeratorType.java" afterPath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/NumeratorType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/Party.java" afterPath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/Party.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRelationship.java" afterPath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRelationship.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRelationshipType.java" afterPath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRelationshipType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRoleType.java" afterPath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRoleType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Unit.java" afterPath="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Unit.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MongoDbModel.iws" />
@@ -40,34 +48,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PartyRoleType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRoleType.java">
+      <file leaf-file-name="Country.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Country.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="1008">
-              <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+              <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TelecomAddressPurpose.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/TelecomAddressPurpose.java">
+      <file leaf-file-name="FreezeReason.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/FreezeReason.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="324">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+              <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MlTextHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/helpers/MlTextHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="1350">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-              <folding>
-                <element signature="method#MlTextHelper#1;class#MlTextHelper#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -75,7 +71,7 @@
       <file leaf-file-name="ModelTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/org/tylproject/data/mongo/ModelTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="577" max-vertical-offset="3384">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1765" max-vertical-offset="3384">
               <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
               <folding>
                 <element signature="e#2306#2307#0" expanded="true" />
@@ -85,21 +81,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PartyDiscriminator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyDiscriminator.java">
+      <file leaf-file-name="PartyTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/tylproject/data/mongo/PartyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="342">
-              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+            <state vertical-scroll-proportion="-1.681458" vertical-offset="1277" max-vertical-offset="1908">
+              <caret line="26" column="0" selection-start-line="25" selection-start-column="4" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MlText.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/common/MlText.java">
+      <file leaf-file-name="Numerator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Numerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="540">
-              <caret line="27" column="71" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+              <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,41 +103,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NumeratorTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/tylproject/data/mongo/NumeratorTest.java">
+      <file leaf-file-name="Industry.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Industry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="2016">
-              <caret line="65" column="104" selection-start-line="65" selection-start-column="97" selection-end-line="65" selection-end-column="104" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="252">
+              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MlTextHelperFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/MlTextHelperFactory.java">
+      <file leaf-file-name="Organization.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/crm/Organization.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="576">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="954">
+              <caret line="42" column="67" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BeforeOrganizationListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/crm/BeforeOrganizationListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+              <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MongoModelConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/MongoModelConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+              <caret line="47" column="93" selection-start-line="47" selection-start-column="93" selection-end-line="47" selection-end-column="93" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Party.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/Party.java">
+      <file leaf-file-name="Unit.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Unit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="774">
-              <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrganizationName.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/OrganizationName.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30220357" vertical-offset="0" max-vertical-offset="953">
-              <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -165,11 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/repository/EmailAddressRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/FreezeReason.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Country.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Unit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/Partydentifier.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/IdentifierType.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/TelPhysicalType.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/WebAddressType.java" />
@@ -183,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/OrganizationName.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/Person.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/ConversionFactor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Numerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyIdentifierType.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRelationShip.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/common/Footprint.java" />
@@ -192,13 +196,10 @@
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/SignatureReason.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/common/SignatureReason.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/common/Signature.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRelationship.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRelationshipType.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/repository/PartySignature.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/repository/PartyRoleTypeRepository.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/tylproject/data/mongo/PartyTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartySignature.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRoleType.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/EmailAddress.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/GeographicAddress.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/repository/PartyRelationshipRepository.java" />
@@ -209,13 +210,22 @@
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/TelecomPhysicalType.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/WebAddress.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/TelecomAddress.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/NumeratorType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/FreezeReason.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/Organization.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRole.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/MongoModelConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/Party.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/tylproject/data/mongo/ModelTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/Party.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRelationship.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRelationshipType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRoleType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/NumeratorType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Unit.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Country.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/FreezeReason.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Numerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Industry.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/crm/Organization.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/crm/BeforeOrganizationListener.java" />
       </list>
     </option>
   </component>
@@ -300,7 +310,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -429,36 +438,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="party" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tylmodel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mongo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="helpers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -489,12 +468,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="crm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tylmodel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mongo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basics" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -552,15 +562,6 @@
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="it.tylframework.data.mongo.party.traits" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.tylproject.data.mongo.party.repository" />
-      <recent name="org.tylproject.data.mongo.party" />
-      <recent name="it.tylframework.data.mongo" />
-      <recent name="it.tylframework.data.mongo.config" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.tylproject.data.mongo.party" />
       <recent name="org.tylproject.data.mongo.basics.Exceptions" />
@@ -570,9 +571,19 @@
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="it.tylframework.data.mongo.party.traits" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.tylproject.data.mongo" />
       <recent name="it.tylframework.data.mongo" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.tylproject.data.mongo.crm" />
+      <recent name="org.tylproject.data.mongo.party.repository" />
+      <recent name="org.tylproject.data.mongo.party" />
+      <recent name="it.tylframework.data.mongo" />
+      <recent name="it.tylframework.data.mongo.config" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.All in model">
@@ -1165,7 +1176,8 @@
       <workItem from="1424429713451" duration="1942000" />
       <workItem from="1424445462257" duration="2461000" />
       <workItem from="1424448958500" duration="740000" />
-      <workItem from="1424966935917" duration="71000" />
+      <workItem from="1424966935917" duration="395000" />
+      <workItem from="1425207739517" duration="1912000" />
     </task>
     <task id="LOCAL-00001" summary="First Kotlin classes developed">
       <created>1408918948540</created>
@@ -1239,11 +1251,17 @@
       <option name="project" value="LOCAL" />
       <updated>1424172727173</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Some refinements">
+      <created>1424967031651</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1424967031651</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223496000" />
+    <option name="totallyTimeSpent" value="225732000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1279,26 +1297,26 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1083558" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16581891" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26653102" sideWeight="0.6786288" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26091644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32756868" sideWeight="0.4997322" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24866879" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915967" sideWeight="0.4997322" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Kotlin Bytecode" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IvyIDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915967" sideWeight="0.4997322" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31637844" sideWeight="0.4997322" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26653102" sideWeight="0.6786288" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32940546" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277311" sideWeight="0.4997322" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1326,7 +1344,8 @@
     <MESSAGE value="Beginning Party" />
     <MESSAGE value="Added PartyRole, PartyRelationship and related classes" />
     <MESSAGE value="Removed some indexes and NonNull" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed some indexes and NonNull" />
+    <MESSAGE value="Some refinements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some refinements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1339,41 +1358,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/ConversionFactor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="936">
-          <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/common/Footprint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="810">
-          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Country.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.375" vertical-offset="0" max-vertical-offset="672">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="35" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/common/SignatureReason.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-          <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/common/Signature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/repository/PartyRoleTypeRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
@@ -1437,24 +1421,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRelationship.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="2052">
-          <caret line="72" column="39" selection-start-line="59" selection-start-column="4" selection-end-line="72" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRelationshipQualifier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1602">
           <caret line="101" column="62" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRelationshipType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="756">
-          <caret line="57" column="97" selection-start-line="57" selection-start-column="97" selection-end-line="57" selection-end-column="97" />
         </state>
       </provider>
     </entry>
@@ -1500,13 +1470,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Numerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="756">
-          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/NumeratorFeeder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="702">
@@ -1514,24 +1477,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/NumeratorType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="33" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/FreezeReason.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="486">
-          <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1553,13 +1502,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="846">
           <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/tylproject/data/mongo/PartyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1872">
-          <caret line="26" column="40" selection-start-line="25" selection-start-column="4" selection-end-line="26" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1612,14 +1554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/MongoModelConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
-          <caret line="47" column="93" selection-start-line="47" selection-start-column="93" selection-end-line="47" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRole.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="292" max-vertical-offset="1188">
@@ -1628,14 +1562,6 @@
             <element signature="e#0#2680#0" expanded="false" />
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRoleType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="1008">
-          <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1683,6 +1609,134 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyDiscriminator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/OrganizationName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/Party.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="287" max-vertical-offset="918">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRelationship.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1439" max-vertical-offset="2070">
+          <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRelationshipType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="23" max-vertical-offset="900">
+          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyRoleType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="1152">
+          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/NumeratorType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Unit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Country.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/FreezeReason.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Numerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/basics/Industry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="252">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/crm/Organization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="954">
+          <caret line="42" column="67" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/crm/BeforeOrganizationListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/MongoModelConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+          <caret line="47" column="93" selection-start-line="47" selection-start-column="93" selection-end-line="47" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/org/tylproject/data/mongo/ModelTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="577" max-vertical-offset="3384">
@@ -1694,26 +1748,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/PartyDiscriminator.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/tylproject/data/mongo/PartyTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/Party.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="774">
-          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/tylproject/data/mongo/party/OrganizationName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30220357" vertical-offset="0" max-vertical-offset="953">
-          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+        <state vertical-scroll-proportion="-1.681458" vertical-offset="1277" max-vertical-offset="1908">
+          <caret line="26" column="0" selection-start-line="25" selection-start-column="4" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>

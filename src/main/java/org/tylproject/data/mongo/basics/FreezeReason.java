@@ -22,7 +22,6 @@ import lombok.RequiredArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.tylproject.data.mongo.common.MlText;
 
@@ -37,7 +36,6 @@ public class FreezeReason {
     @Id
     private ObjectId id;
 
-    //@Indexed(unique = true)
     @NonNull private String code;
     @NonNull MlText name;
 }

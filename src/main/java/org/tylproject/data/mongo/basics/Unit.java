@@ -16,7 +16,6 @@
 package org.tylproject.data.mongo.basics;
 
 import org.bson.types.ObjectId;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.tylproject.data.mongo.common.MlText;
 import lombok.Data;
 import lombok.NonNull;
@@ -37,7 +36,6 @@ public class Unit {
     @Id
     private ObjectId id;
 
-    @Indexed(unique=true)
     @NonNull String code;
 
     @NonNull  MlText name;

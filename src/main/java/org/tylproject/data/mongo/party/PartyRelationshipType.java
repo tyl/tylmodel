@@ -22,7 +22,6 @@ import lombok.RequiredArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.tylproject.data.mongo.common.MlText;
 
@@ -40,7 +39,6 @@ public class PartyRelationshipType {
     @Id
     private ObjectId id;
 
-    @Indexed(unique=true)
     @NonNull
     private String code;
 
@@ -48,10 +46,8 @@ public class PartyRelationshipType {
     private MlText description;
 
     // TODO - fare predicato che include i due testi
-    @Indexed
     private MlText predicateLeftToRight;
 
-    @Indexed
     private MlText predicateRightToLeft;
 
     private Set<PartyRoleType> allowableLeftRoles = new HashSet<PartyRoleType>();

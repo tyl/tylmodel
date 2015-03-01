@@ -22,7 +22,6 @@ import lombok.RequiredArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -36,10 +35,8 @@ public class Country {
     @Id
     private ObjectId id;
 
-    @Indexed(unique = true)
     @NonNull String twoCharCode;
 
-    @Indexed
     @NonNull String officialName;
 
     @NonNull Integer numericCode;

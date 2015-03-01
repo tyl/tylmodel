@@ -21,7 +21,6 @@ import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 import org.joda.time.DateTime;
 import org.springframework.data.annotation.TypeAlias;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.tylproject.data.mongo.basics.FreezeReason;
@@ -30,7 +29,7 @@ import org.tylproject.data.mongo.common.MlText;
 
 // TODO - completare il Javadoc della classe
 /**
- * Most of the prperties are self-explanatory.
+ * Most of the properties are self-explanatory.
  *
  * A Relationship must be read in a "direction": left-to-right or right-to-left. The PartyRelationshipType descibes
  * the predicate that can be used reading the relationship in a sense or in the other. In istance:
@@ -120,6 +119,5 @@ public class PartyRelationship extends Footprint {
     /**
      * The specific identifier of the relationship
      */
-    @Indexed
     private PartyIdentifier identifierInRelationship;
 }

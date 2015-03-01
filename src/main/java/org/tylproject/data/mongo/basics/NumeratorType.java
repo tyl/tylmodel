@@ -16,7 +16,6 @@
 package org.tylproject.data.mongo.basics;
 
 import org.bson.types.ObjectId;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.tylproject.data.mongo.common.MlText;
 import lombok.Data;
@@ -36,7 +35,6 @@ public class NumeratorType{
     @Id
     private ObjectId id;
 
-//    @Indexed(unique = true)
     @NonNull String code;
 
     @NonNull

@@ -20,10 +20,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.TypeAlias;
-import org.springframework.data.mongodb.core.index.CompoundIndex;
-import org.springframework.data.mongodb.core.index.CompoundIndexes;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.DBRef;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.tylproject.data.mongo.basics.FreezeReason;
 import org.tylproject.data.mongo.common.Footprint;
@@ -47,18 +44,14 @@ public class Party extends Footprint{
     private FreezeReason freezeReason;
     private boolean canceled=false;
 
-    //@Indexed(sparse = true)
     private String code;
 
-    //@Indexed(unique = true, sparse = true)
     private String shortName;
 
     private List<GeographicAddress> geographicAddress=new ArrayList<GeographicAddress>();
     private List<TelecomAddress> telecomAddress=new ArrayList<TelecomAddress>();
     private List<WebAddress> webAddress=new ArrayList<WebAddress>();
     private List<EmailAddress> emailAddress=new ArrayList<EmailAddress>();
-
-    //@Indexed(sparse = true)
     private Set<PartyIdentifier> partyIdentifier=new HashSet<PartyIdentifier>();
     private PartyDiscriminator discriminator;
     private Person person;
