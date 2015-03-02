@@ -28,24 +28,70 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * Created by mp on 01/01/15.
  */
 //TODO Gestire come da libro una stringa il cui ritorno sia strutturato (getFormattedTelecomAddress)
+
+/**
+ * A number that can contact a telephone, a mobile phone, a fax, a pager or other telephonic device.
+ * The International Telecommunication Union (www.itu.int) provides standards for TelecomAssresses. Each address is
+ * made up of the following parts:
+ * +cc (p)aaa nnnnnnn ext. xxx
+ * cc = country code
+ * p = National Direct Dialing prefix (NDD)
+ * aaa = area code
+ * nnnnnnn = number
+ * xxx = extension
+ */
 @Data
 @RequiredArgsConstructor
 public class TelecomAddress {
     @Id
     private ObjectId id;
 
+    /**
+     * The number to dial a particulr country
+     */
     private String countryTelCode;
+
+    /**
+     * The prefix to use within a country between different cities or areas. Usually it is dropped when
+     * dialing from outside the country, but not always (i.e. Italy). In thes cases omit the
+     * nationalDirectDialingPrefix an put it at the beginning of  the area code, that is always used,
+     * even from abroad
+     */
     private String nationalDirectDialingPrefix;
+
+    /**
+     * The code for an area or a city. It includes the nationalDirectDialingPrefix when not omitted
+     * iin case of call from abroad (i.e. calling Italy)
+     */
     private String areaCode;
+
+    /**
+     * The teleephone number. Length defined by national standards
+     */
     private String number;
+
+    /**
+     * the extension accessible via the number
+     */
     private String extension;
+
+    /**
+     * Indicates if it is a fixed phone, a mobile, a fax, a pager or any other type of device
+     */
     private TelecomPhysicalType physicalType;
+
+    /**
+     * Indicates the purpose of the number. It can can be Business, Home, Personal, etc.
+     */
     private TelecomAddressPurpose purpose;
 
+    /**
+     * The Goographic address related to the telecom address, if required
+     */
     @DBRef(lazy = true)
     private GeographicAddress relatedGeographicAddress;
 
     public String getFormattedTelecomNumber(){
-        return countryTelCode+"("+nationalDirectDialingPrefix+areaCode+")"+number+"-"+extension;
+        return "+"+countryTelCode+" ("+nationalDirectDialingPrefix+")"+areaCode+" "+number+"-"+extension;
     }
 }
