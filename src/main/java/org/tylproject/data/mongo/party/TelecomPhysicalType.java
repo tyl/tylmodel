@@ -22,5 +22,5 @@ package org.tylproject.data.mongo.party;
 public enum TelecomPhysicalType {
     FIXED,
     CELLULAR,
-    PAGER,
+    PAGER, FAX,
 }

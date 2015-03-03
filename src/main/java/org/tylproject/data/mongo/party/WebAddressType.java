@@ -23,5 +23,5 @@ public enum WebAddressType {
     URI,
     WEBSITE,
     FTP,
-    SFTP
+    TWITTER, SFTP
 }
