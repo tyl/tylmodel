@@ -14,6 +14,7 @@ import org.tylproject.data.mongo.party.*;
 
 /**
  * Created by marco on 01/03/15.
+ *
  */
 @Document(collection="crm_lead")
 @TypeAlias("crm_Lead")
@@ -22,7 +23,8 @@ public class Lead extends PartyRole {
     String company;
     Leadsource leadSource;
     Industry industry;
-    Amount annualRevenue; // TODO - fare il converter
+    //Amount annualRevenue; // TODO - fare il converter
+    Integer annualRevenue
     Leadstatus leadStatus;
     Integer numberOfEmployees;
     Rating rating;
