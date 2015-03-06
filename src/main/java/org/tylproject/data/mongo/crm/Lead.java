@@ -24,7 +24,7 @@ public class Lead extends PartyRole {
     Leadsource leadSource;
     Industry industry;
     //Amount annualRevenue; // TODO - fare il converter
-    Integer annualRevenue
+    Integer annualRevenue;
     Leadstatus leadStatus;
     Integer numberOfEmployees;
     Rating rating;
