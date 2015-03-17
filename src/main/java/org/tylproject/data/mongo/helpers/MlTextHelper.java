@@ -19,6 +19,10 @@ public class MlTextHelper {
     public MlTextHelper(MlText mlText) {
         this.mlText = mlText;
     }
+    public MlTextHelper(MlText mlText, Context context) {
+        this(mlText);
+        this.setTylContext(context);
+    }
     public MlTextHelper(String currentText) {
         this(new MlText());
         this.setCurrentText(currentText);
@@ -43,10 +47,6 @@ public class MlTextHelper {
     public String getCurrentText(){
         assertTylContextIsSet();
         return getText(getTylContext().currentLanguage());
-    }
-
-    public boolean isCurrentTextEmpty() {
-        return mlText.getText(getTylContext().currentLanguage()) == null;
     }
 
     /**
@@ -85,5 +85,10 @@ public class MlTextHelper {
         return text == null || text.isEmpty();
     }
 
+
+    public boolean isCurrentTextEmpty() {
+        assertTylContextIsSet();
+        return isTextEmpty(mlText.getText(getTylContext().currentLanguage()));
+    }
 
 }
