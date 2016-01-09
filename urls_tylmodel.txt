@@ -1,0 +1,121 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+language:
+  title: "1. Language"
+  url: "../tylmodel/language.html"
+  link: "<a href='../tylmodel/language.html'>1. Language</a>"
+
+
+ 
+:
+  title: "2. Country"
+  url: ".."
+  link: "<a href='..'>2. Country</a>"
+
+
+ 
+:
+  title: "3. Unit of Measure"
+  url: ".."
+  link: "<a href='..'>3. Unit of Measure</a>"
+
+
+ 
+:
+  title: "4. Standardization Bodies"
+  url: ".."
+  link: "<a href='..'>4. Standardization Bodies</a>"
+
+
+ 
+:
+  title: "5. System of Units"
+  url: ".."
+  link: "<a href='..'>5. System of Units</a>"
+
+
+ 
+:
+  title: "6. Coordinate Systems"
+  url: ".."
+  link: "<a href='..'>6. Coordinate Systems</a>"
+
+
+ 
+:
+  title: "6. Calendar"
+  url: ".."
+  link: "<a href='..'>6. Calendar</a>"
+
+
+ 
+:
+  title: "7. Parameters"
+  url: ".."
+  link: "<a href='..'>7. Parameters</a>"
+
+
+ 
+:
+  title: "8. Authentication"
+  url: ".."
+  link: "<a href='..'>8. Authentication</a>"
+
+
+
+
+ 
+party:
+  title: "1. Party"
+  url: "../tylmodel/party.html"
+  link: "<a href='../tylmodel/party.html'>1. Party</a>"
+
+
+ 
+:
+  title: "2. Identificators"
+  url: ".."
+  link: "<a href='..'>2. Identificators</a>"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
