@@ -61,7 +61,7 @@ public class PartyRole extends Footprint {
     /**
      * The Party that has this Role
      */
-    @DBRef(lazy=false)
+    //@DBRef(lazy=false)
     private Party party;
 
     /**
@@ -85,7 +85,6 @@ public class PartyRole extends Footprint {
     private DateTime thruDate;
 
     public PartyRole(){}
-
 
     public PartyRole(Party party, PartyRoleType partyRoleType) {
         this.party = party;
