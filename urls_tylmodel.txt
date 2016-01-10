@@ -26,75 +26,75 @@ language:
 
 
  
-:
+under_construction:
   title: "2. Country"
-  url: ".."
-  link: "<a href='..'>2. Country</a>"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>2. Country</a>"
 
 
  
-:
+under_construction:
   title: "3. Unit of Measure"
-  url: ".."
-  link: "<a href='..'>3. Unit of Measure</a>"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>3. Unit of Measure</a>"
 
 
  
-:
+under_construction:
   title: "4. Standardization Bodies"
-  url: ".."
-  link: "<a href='..'>4. Standardization Bodies</a>"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>4. Standardization Bodies</a>"
 
 
  
-:
+under_construction:
   title: "5. System of Units"
-  url: ".."
-  link: "<a href='..'>5. System of Units</a>"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>5. System of Units</a>"
 
 
  
-:
+under_construction:
   title: "6. Coordinate Systems"
-  url: ".."
-  link: "<a href='..'>6. Coordinate Systems</a>"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>6. Coordinate Systems</a>"
 
 
  
-:
+under_construction:
   title: "6. Calendar"
-  url: ".."
-  link: "<a href='..'>6. Calendar</a>"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>6. Calendar</a>"
 
 
  
-:
+under_construction:
   title: "7. Parameters"
-  url: ".."
-  link: "<a href='..'>7. Parameters</a>"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>7. Parameters</a>"
 
 
  
-:
+under_construction:
   title: "8. Authentication"
-  url: ".."
-  link: "<a href='..'>8. Authentication</a>"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>8. Authentication</a>"
 
 
 
 
  
-party:
+under_construction:
   title: "1. Party"
-  url: "../tylmodel/party.html"
-  link: "<a href='../tylmodel/party.html'>1. Party</a>"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>1. Party</a>"
 
 
  
-:
+under_construction:
   title: "2. Identificators"
-  url: ".."
-  link: "<a href='..'>2. Identificators</a>"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>2. Identificators</a>"
 
 
 

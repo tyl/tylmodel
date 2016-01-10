@@ -30,6 +30,17 @@
 
 
 {
+"title": "Language",
+"tags": "",
+"keywords": "",
+"url": "../tylmodel/language.html",
+"summary": "Languages available"
+},
+
+
+
+
+{
 "title": "About the theme author",
 "tags": "getting_started",
 "keywords": "documentation theme, jekyll, technical writers, help authoring tools, hat replacements",
@@ -689,6 +700,17 @@
 
 
 
+
+
+
+
+{
+"title": "Under construction",
+"tags": "",
+"keywords": "",
+"url": "../tylmodel/under_construction.html",
+"summary": "Stay tuned"
+},
 
 
 
