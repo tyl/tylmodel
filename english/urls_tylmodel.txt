@@ -1,0 +1,121 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+under_construction:
+  title: "1. Language"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>1. Language</a>"
+
+
+ 
+under_construction:
+  title: "2. Country"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>2. Country</a>"
+
+
+ 
+under_construction:
+  title: "3. Unit of Measure"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>3. Unit of Measure</a>"
+
+
+ 
+under_construction:
+  title: "4. Standardization Bodies"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>4. Standardization Bodies</a>"
+
+
+ 
+under_construction:
+  title: "5. System of Units"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>5. System of Units</a>"
+
+
+ 
+under_construction:
+  title: "6. Coordinate Systems"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>6. Coordinate Systems</a>"
+
+
+ 
+under_construction:
+  title: "6. Calendar"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>6. Calendar</a>"
+
+
+ 
+under_construction:
+  title: "7. Parameters"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>7. Parameters</a>"
+
+
+ 
+under_construction:
+  title: "8. Authentication"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>8. Authentication</a>"
+
+
+
+
+ 
+under_construction:
+  title: "1. Party"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>1. Party</a>"
+
+
+ 
+under_construction:
+  title: "2. Identificators"
+  url: "../tylmodel/under_construction.html"
+  link: "<a href='../tylmodel/under_construction.html'>2. Identificators</a>"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
