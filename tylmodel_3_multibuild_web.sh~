@@ -2,12 +2,12 @@ kill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')
 clear
 
 echo "Building Tylmodel Writers website..."
-jekyll build --config configs/tylmodel/config_english.yml --incremental
+jekyll build --incremental --config configs/tylmodel/config_english.yml
 # jekyll serve --config configs/doc/config_writers.yml
 echo "done"
 
 echo "Building Tylmodel Designers websote..."
-jekyll build --config configs/tylmodel/config_italian.yml --incremental
+jekyll build --incremental --config configs/tylmodel/config_italian.yml
 # jekyll serve --config configs/doc/config_designers.yml
 echo "done"
 

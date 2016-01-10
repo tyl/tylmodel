@@ -26,10 +26,10 @@ language:
 
 
  
-under_construction:
+country:
   title: "2. Country"
-  url: "../tylmodel/under_construction.html"
-  link: "<a href='../tylmodel/under_construction.html'>2. Country</a>"
+  url: "../tylmodel/country.html"
+  link: "<a href='../tylmodel/country.html'>2. Country</a>"
 
 
  
