@@ -17,6 +17,7 @@
 package org.tylproject.data.mongo;
 
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.junit.Before;
 import org.junit.Test;
@@ -70,7 +71,7 @@ public class NumeratorTest {
         Numerator invoiceNumerator = new Numerator("invNum", mlTextHelperFactory.mlTextOf("Invoice Numerator"),invoiceType);
 
 
-        NumeratorFeeder inv2015 = new NumeratorFeeder(new DateTime(2015,1,1,0,0),new DateTime(2015,12,31,23,59));
+        NumeratorFeeder inv2015 = new NumeratorFeeder(new DateTime(2015,1,1,0,0,DateTimeZone.UTC),new DateTime(2015,12,31,23,59,DateTimeZone.UTC));
         inv2015.setLastNumberUsed(233);
         // TODO gestire il controllo sul fatto che l'output deve essere formattato;
         // TODO fare in modo che il test sulla data corrente funzioni sempre
@@ -79,13 +80,18 @@ public class NumeratorTest {
         invoiceNumerator.getNumeratorFeeders().add(inv2015);
 
 
-        NumeratorFeeder inv2016 = new NumeratorFeeder(new DateTime(2016,1,1,0,0),new DateTime(2016,12,31,23,59));
+        NumeratorFeeder inv2016 = new NumeratorFeeder(new DateTime(2016,1,1,0,0,DateTimeZone.UTC),new DateTime(2016,12,31,23,59,DateTimeZone.UTC));
+        inv2016.setLastNumberUsed(233);
+        inv2016.setOutputAsString(true);
+        inv2016.setOutputFormat("INVNUM%06d");
         invoiceNumerator.getNumeratorFeeders().add(inv2016);
-        NumeratorFeeder inv2017 = new NumeratorFeeder(new DateTime(2017,1,1,0,0),new DateTime(2017,12,31,23,59));
+
+        NumeratorFeeder inv2017 = new NumeratorFeeder(new DateTime(2017,1,1,0,0,DateTimeZone.UTC),new DateTime(2017,12,31,23,59,DateTimeZone.UTC));
         inv2017.setOutputAsString(true);
         inv2017.setOutputFormat("INVNUM%06d");
         invoiceNumerator.getNumeratorFeeders().add(inv2017);
-        NumeratorFeeder inv2018 = new NumeratorFeeder(new DateTime(2018,1,1,0,0),new DateTime(2018,12,31,23,59));
+
+        NumeratorFeeder inv2018 = new NumeratorFeeder(new DateTime(2018,1,1,0,0,DateTimeZone.UTC),new DateTime(2018,12,31,23,59,DateTimeZone.UTC));
         inv2018.setOutputAsString(true);
         inv2018.setOutputFormat("INVNUM%06d");
         invoiceNumerator.getNumeratorFeeders().add(inv2018);
@@ -95,18 +101,18 @@ public class NumeratorTest {
     @Test
     public void testNumericNumerator() throws TylModelException {
         assertEquals(234, numeratorRep.getNextNum("invNum"));
-        assertEquals(1,numeratorRep.getNextNum("invNum",new DateTime(2018,4,12,0,0)));
+        assertEquals(1,numeratorRep.getNextNum("invNum",new DateTime(2018,4,12,0,0,DateTimeZone.UTC)));
     }
 
     @Test
-    public void testFormattedNumerator() throws TylModelException {
+    public void mongotestFormattedNumerator() throws TylModelException {
         assertEquals("INVNUM000234", numeratorRep.getNextFormattedNum("invNum"));
     }
 
 
     @Test(expected = TylModelException.class)
     public void testNumericNumeratorOutOfRange() throws TylModelException {
-        assertEquals(234,numeratorRep.getNextNum("invNum",new DateTime(2999,4,12,0,0)));
+        assertEquals(234,numeratorRep.getNextNum("invNum",new DateTime(2999,4,12,0,0,DateTimeZone.UTC)));
     }
 
     /**

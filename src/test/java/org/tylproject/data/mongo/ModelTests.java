@@ -115,6 +115,8 @@ public class ModelTests {
         invoiceNumerator.getNumeratorFeeders().add(inv2014);
         NumeratorFeeder inv2015 = new NumeratorFeeder(new DateTime(2015,1,1,0,0),new DateTime(2015,12,31,23,59));
         invoiceNumerator.getNumeratorFeeders().add(inv2015);
+        NumeratorFeeder inv2016 = new NumeratorFeeder(new DateTime(2016,1,1,0,0),new DateTime(2016,12,31,23,59));
+        invoiceNumerator.getNumeratorFeeders().add(inv2016);
         mongoTemplate.insert(invoiceNumerator);
 
         MlText si= mlTextOf("International System of Units");
